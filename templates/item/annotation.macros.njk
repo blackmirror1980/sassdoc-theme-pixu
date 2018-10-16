@@ -5,10 +5,10 @@
 {# Parameter list template #}
 {% macro param_list(name=none, url=none, item_type=none, value=none, value_type=none, note=none, description=none) %}
   <tr class="param-row" style="border-bottom: 1px solid lightgray; font-size: 16px; line-height: 30px;">
-    <td class="param-name" style="width: 200px;">{{ item_type }}&nbsp;{{ name }}</td>
-    <td class="param-value" style="width: 200px; color: #aa0e5c;">{{ value }}</td>
-    <td class="param-value-type" style="width: 150px; color: #aa0e5c;">({{ value_type }})</td>
-    <td class="param-description">
+    <td class="param-name" style="text-align: left; width: 200px;">{{ item_type }}&nbsp;{{ name }}</td>
+    <td class="param-value" style="text-align: left; width: 200px; color: #aa0e5c;">{{ value }}</td>
+    <td class="param-value-type" style="text-align: left; width: 150px; color: #aa0e5c;">({{ value_type }})</td>
+    <td class="param-description" style="text-align: left;">
       {% if note %}
         [{{ note }}]
         <br>
@@ -34,11 +34,11 @@
     {% call show.item_section(type, header) %}
       <table class="param-list" style="width: 100%; border-collapse: collapse;">
         <thead>
-          <tr class="param-row" style="border-bottom: 1px solid lightgray; color: lightgray; font-size: 14px; line-height: 30px;">
-            <th class="param-name" style="width: 200px;">Type/Name</th>
-            <th class="param-value" style="width: 200px;">Value/Default Value</th>
-            <th class="param-value-type" style="width: 150px;">Type</th>
-            <th class="param-description">Note/Description</th>
+          <tr class="param-row" style="text-align: left; border-bottom: 1px solid lightgray; color: lightgray; font-size: 14px; line-height: 30px;">
+            <th class="param-name" style="text-align: left; width: 200px;">Type/Name</th>
+            <th class="param-value" style="text-align: left; width: 200px;">Value/Default Value</th>
+            <th class="param-value-type" style="text-align: left; width: 150px;">Type</th>
+            <th class="param-description" style="text-align: left;">Note/Description</th>
           </tr>
         </thead>
         <tbody>
