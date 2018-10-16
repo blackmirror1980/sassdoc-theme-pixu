@@ -73,6 +73,38 @@
   margin-bottom: size('shim');
 }
 
+.param-type {
+  color: #aa0e5c;
+  font-size: 13px;
+  line-height: 15px;
+}
+
+.param-name {
+  font-size: 13px;
+  line-height: 15px;
+}
+
+.param-value {
+  color: #aa0e5c;
+  font-size: 13px;
+  line-height: 15px;
+}
+
+.param-value-type {
+  font-size: 13px;
+  line-height: 15px;
+}
+
+.param-note {
+  font-size: 13px;
+  line-height: 15px;
+}
+
+.param-description {
+  font-size: 13px;
+  line-height: 15px;
+}
+
 .param-title {
   color: color('text-light');
   font-size: size('h3');

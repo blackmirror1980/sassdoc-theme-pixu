@@ -4,34 +4,18 @@
 
 {# Parameter list template #}
 {% macro param_list(name=none, url=none, item_type=none, value=none, value_type=none, note=none, description=none) %}
-  <tr>
-    {% if item_type and (item_type != '') -%}
-    <td>{{ item_type }}</td>
-    {%- endif %}
-    {% if name %}
-      <td>
-      {{ utility.link_if(
-        content=name,
-        url=url,
-        attrs={'class': 'item-name'}
-        ) }}
-      </td>
-    {% endif %}
-    {% if value -%}
-      <td>{{ value }}</td>
-    {%- endif %}
-    {% if value_type -%}
-      <td>({{ value_type }})</td>
-    {%- endif %}
-    {% if note -%}
-      <td>[{{ note }}]</td>
-    {%- endif %}
+  <tr class="param-row">
+    <td class="param-type">{{ item_type }}</td>
+    <td class="param-name">{{ name }}</td>
+    <td class="param-value">{{ value }}</td>
+    <td class="param-value-type">({{ value_type }})</td>
+    <td class="param-note">[{{ note }}]</td>
+    <td class="param-description">
     {% if description %}
       {% set description = ['<p>', description, '</p>']|join if not ('</' in description) else description %}
-      <td>
         {{ description|safe }}
-      </td>
     {% endif %}
+    </td>
   </tr>
 {% endmacro %}
 
