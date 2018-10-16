@@ -32,7 +32,7 @@
 
   {% if data or content_data or output_data or return_data or (throw_data.length) %}
     {% call show.item_section(type, header) %}
-      <table class="param-list">
+      <table class="param-list" style="width: 100%; border-collapse: collapse;">
       {% for item in data %}
         {{ param(name, item, type) }}
       {% endfor %}
