@@ -4,37 +4,35 @@
 
 {# Parameter list template #}
 {% macro param_list(name=none, url=none, item_type=none, value=none, value_type=none, note=none, description=none) %}
-  <table class="param-list">
-    <tr>
-      {% if item_type and (item_type != '') -%}
-      <td>{{ item_type }}</td>
-      {%- endif %}
-      {% if name %}
-        <td>
-        {{ utility.link_if(
-          content=name,
-          url=url,
-          attrs={'class': 'item-name'}
-          ) }}
-        </td>
-      {% endif %}
-      {% if value -%}
-        <td>{{ value }}</td>
-      {%- endif %}
-      {% if value_type -%}
-        <td>({{ value_type }})</td>
-      {%- endif %}
-      {% if note -%}
-        <td>[{{ note }}]</td>
-      {%- endif %}
-      {% if description %}
-        {% set description = ['<p>', description, '</p>']|join if not ('</' in description) else description %}
-        <td>
-          {{ description|safe }}
-        </td>
-      {% endif %}
-    </tr>
-  </div>
+  <tr>
+    {% if item_type and (item_type != '') -%}
+    <td>{{ item_type }}</td>
+    {%- endif %}
+    {% if name %}
+      <td>
+      {{ utility.link_if(
+        content=name,
+        url=url,
+        attrs={'class': 'item-name'}
+        ) }}
+      </td>
+    {% endif %}
+    {% if value -%}
+      <td>{{ value }}</td>
+    {%- endif %}
+    {% if value_type -%}
+      <td>({{ value_type }})</td>
+    {%- endif %}
+    {% if note -%}
+      <td>[{{ note }}]</td>
+    {%- endif %}
+    {% if description %}
+      {% set description = ['<p>', description, '</p>']|join if not ('</' in description) else description %}
+      <td>
+        {{ description|safe }}
+      </td>
+    {% endif %}
+  </tr>
 {% endmacro %}
 
 
@@ -48,10 +46,12 @@
 
   {% if data or content_data or output_data or return_data or (throw_data.length) %}
     {% call show.item_section(type, header) %}
+      <table class="param-list">
       {% for item in data %}
         {{ param(name, item, type) }}
       {% endfor %}
-
+      </table>
+      
       {{ content(content_data) }}
       {{ return(return_data) }}
       {{ output(output_data) }}
