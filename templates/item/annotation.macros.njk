@@ -4,7 +4,7 @@
 
 {# Parameter list template #}
 {% macro param_list(name=none, url=none, item_type=none, value=none, value_type=none, note=none, description=none) %}
-  <tr class="param-row" style="border-bottom: 1px solid lightgray; font-size: 16px; line-height: 24px;">
+  <tr class="param-row" style="border-bottom: 1px solid lightgray; font-size: 16px; line-height: 30px;">
     <td class="param-name" style="width: 200px;">{{ item_type }}&nbsp;{{ name }}</td>
     <td class="param-value" style="width: 200px; color: #aa0e5c;">{{ value }}</td>
     <td class="param-value-type" style="width: 150px; color: #aa0e5c;">({{ value_type }})</td>
@@ -33,9 +33,19 @@
   {% if data or content_data or output_data or return_data or (throw_data.length) %}
     {% call show.item_section(type, header) %}
       <table class="param-list" style="width: 100%; border-collapse: collapse;">
-      {% for item in data %}
-        {{ param(name, item, type) }}
-      {% endfor %}
+        <thead>
+          <tr class="param-row" style="border-bottom: 1px solid lightgray; color: lightgray; font-size: 14px; line-height: 30px;">
+            <th class="param-name" style="width: 200px;">Type/Name</th>
+            <th class="param-value" style="width: 200px;">Value/Default Value</th>
+            <th class="param-value-type" style="width: 150px;">Type</th>
+            <th class="param-description">Note/Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for item in data %}
+            {{ param(name, item, type) }}
+          {% endfor %}
+        </tbody>
       </table>
       
       {{ content(content_data) }}
