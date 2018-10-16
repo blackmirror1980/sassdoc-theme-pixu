@@ -1,9 +1,9 @@
 {
   "name": "sassdoc-theme-pixu",
   "title": "Pixu",
-  "description": "An Odd SassDoc theme.",
+  "description": "A fork of Herman SassDoc theme.",
   "version": "3.0.3",
-  "homepage": "http://oddbird.net/pixu/",
+  "homepage": "",
   "keywords": [
     "sassdoc-theme"
   ],
