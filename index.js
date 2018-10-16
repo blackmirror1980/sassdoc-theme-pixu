@@ -1,7 +1,7 @@
 'use strict';
 
 const prepareContext = require('./lib/prepareContext');
-const { renderHerman } = require('./lib/renderHerman');
+const { renderPixu } = require('./lib/renderPixu');
 
 const colors = require('./lib/annotations/colors');
 const example = require('./lib/annotations/example');
@@ -15,14 +15,14 @@ const sizes = require('./lib/annotations/sizes');
  * Actual theme function. It takes the destination directory `dest`,
  * and the context variables `ctx`.
  */
-const herman = (dest, ctx) =>
+const pixu = (dest, ctx) =>
   prepareContext(ctx).then(preparedContext =>
-    renderHerman(dest, preparedContext)
+    renderPixu(dest, preparedContext)
   );
 
-herman.annotations = [icons, colors, sizes, ratios, font, example, name];
+pixu.annotations = [icons, colors, sizes, ratios, font, example, name];
 
 // make sure sassdoc will preserve comments not attached to Sass
-herman.includeUnknownContexts = true;
+pixu.includeUnknownContexts = true;
 
-module.exports = herman;
+module.exports = pixu;

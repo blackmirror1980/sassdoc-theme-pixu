@@ -5,11 +5,11 @@ const del = require('del');
 const fs = require('fs');
 const Promise = require('bluebird');
 
-const herman = require('../../');
+const pixu = require('../../');
 
 const access = Promise.promisify(fs.access);
 
-describe('herman', function() {
+describe('pixu', function() {
   before(function() {
     this.dest = `${__dirname}/dest`;
   });
@@ -18,8 +18,8 @@ describe('herman', function() {
     del.sync(`${this.dest}/*`);
   });
 
-  it('renders herman', function(done) {
-    herman(this.dest, { data: [] })
+  it('renders pixu', function(done) {
+    pixu(this.dest, { data: [] })
       .then(() => access(`${this.dest}/index.html`))
       .then(() => {
         assert.ok(true);

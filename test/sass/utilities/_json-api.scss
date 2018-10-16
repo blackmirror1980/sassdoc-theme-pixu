@@ -1,9 +1,9 @@
 // JSON Export Tests
 // =================
 
-// Herman Export
+// Pixu Export
 // -------------
-@include describe('herman-export [mixin]') {
+@include describe('pixu-export [mixin]') {
   @include it('Exports JSON-encoded maps') {
     $map: (
       1: (a, b, c),
@@ -13,12 +13,12 @@
 
     @include assert {
       @include output {
-        @include herman-export($map);
+        @include pixu-export($map);
       }
 
       // sass-lint:disable no-empty-rulesets
       @include expect {
-        /*! json-encode: #{_herman-encode($map)} */
+        /*! json-encode: #{_pixu-encode($map)} */
       }
     }
   }

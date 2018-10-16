@@ -9,7 +9,7 @@ const getNunjucksEnv = require('../../lib/utils/getNunjucksEnv');
 describe('getNunjucksEnv', function() {
   it('uses an existing nunjucksEnv first', function() {
     const env = {
-      herman: {
+      pixu: {
         nunjucks: {
           environment: 'some value',
         },
@@ -19,7 +19,7 @@ describe('getNunjucksEnv', function() {
     assert.equal(actual, 'some value');
   });
 
-  it('returns null if env.herman missing', function() {
+  it('returns null if env.pixu missing', function() {
     const env = {
       logger: {
         warn: sinon.fake(),
@@ -33,7 +33,7 @@ describe('getNunjucksEnv', function() {
   it('runs nunjucks.configure if all is good', function() {
     const configure = sinon.stub(nunjucks, 'configure');
     const env = {
-      herman: {
+      pixu: {
         nunjucks: {
           templatepath: 'some value',
         },

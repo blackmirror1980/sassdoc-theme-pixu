@@ -3,7 +3,7 @@
 
 // Banner Region
 // -------------
-/// Layout styles for Herman's top-banner region.
+/// Layout styles for Pixu's top-banner region.
 ///
 /// @group style-banner
 /// @example njk
@@ -13,7 +13,7 @@
 ///       {{ utility.icon('menu', size='nav-icon') }}
 ///     </button>
 ///     <div class="project-title">
-///       <a href="index.html" rel="home" class="project-name">Herman</a>
+///       <a href="index.html" rel="home" class="project-name">Pixu</a>
 ///       <span class="project-version">1.0.0</span>
 ///     </div>
 ///   </header>
@@ -33,7 +33,7 @@
 /// @group style-banner
 /// @example html
 ///   <div class="project-title">
-///     <a href="index.html" rel="home" class="project-name">Herman</a>
+///     <a href="index.html" rel="home" class="project-name">Pixu</a>
 ///     <span class="project-version">1.0.0</span>
 ///   </div>
 .project-title {
@@ -49,7 +49,7 @@
 ///
 /// @group style-banner
 /// @example html
-///   <a href="index.html" rel="home" class="project-name">Herman</a>
+///   <a href="index.html" rel="home" class="project-name">Pixu</a>
 .project-name {
   font-size: size('h1');
   font-weight: bold;

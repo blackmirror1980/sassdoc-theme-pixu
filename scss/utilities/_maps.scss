@@ -1,10 +1,10 @@
 // Map Utilities
 // =============
 
-// Herman Add
+// Pixu Add
 // ----------
 /// Add a map of colors, fonts, sizes, ratios, etc
-/// to the `$herman` map for JSON-export,
+/// to the `$pixu` map for JSON-export,
 /// converting values to JSON-ready strings,
 /// with optional functions/args for compiling raw values.
 ///
@@ -24,30 +24,30 @@
 ///   A function to use for compiling values before export,
 ///   and any additional arguments for the function
 /// @output
-///   Updated `$herman` map, ready for JSON export
+///   Updated `$pixu` map, ready for JSON export
 /// @example scss
 ///   $brand-colors: (
 ///     'brand-blue': hsl(195, 85%, 35%),
 ///     'light-gray': 'brand-blue' ('tint': 80%, 'desaturate': 80%),
 ///   );
-///   @include herman-add('colors', 'brand-colors', $brand-colors, get-function('color'));
-///   /* #{$herman} */
-@mixin herman-add($type, $key, $map, $args...) {
+///   @include pixu-add('colors', 'brand-colors', $brand-colors, get-function('color'));
+///   /* #{$pixu} */
+@mixin pixu-add($type, $key, $map, $args...) {
   // pluralize type
-  $type: map-get($_herman-plural-types, $type) or $type;
+  $type: map-get($_pixu-plural-types, $type) or $type;
 
   // compile maps as needed
   @if (length($args) > 0) {
-    $map: herman-map-compile($map, $args...);
+    $map: pixu-map-compile($map, $args...);
   }
 
   // Update nested map by type
-  $nested: map-get($herman, $type) or ();
+  $nested: map-get($pixu, $type) or ();
   $nested: map-merge($nested, ($key: $map));
   $nested: ($type: $nested);
 
-  // Merge nested map back into $herman
-  $herman: map-merge($herman, $nested) !global;
+  // Merge nested map back into $pixu
+  $pixu: map-merge($pixu, $nested) !global;
 }
 
 // Map Compile
@@ -55,7 +55,7 @@
 /// Pass the values of any map through a given function
 /// (with optional arguments)
 /// and return the compiled map.
-/// This is used by `herman-add` and `accoutrement-add`,
+/// This is used by `pixu-add` and `accoutrement-add`,
 /// but can also be accessed directly.
 ///
 /// @group api_json-export
@@ -78,8 +78,8 @@
 ///     'brand-blue': hsl(195, 85%, 35%),
 ///     'light-gray': 'brand-blue' ('tint': 80%, 'desaturate': 80%),
 ///   );
-///   /* #{herman-map-compile($brand-colors, get-function('color'))} */
-@function herman-map-compile($map, $function, $args...) {
+///   /* #{pixu-map-compile($brand-colors, get-function('color'))} */
+@function pixu-map-compile($map, $function, $args...) {
   $output: ();
 
   @each $key, $value in $map {

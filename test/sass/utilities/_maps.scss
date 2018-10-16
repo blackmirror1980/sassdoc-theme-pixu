@@ -34,10 +34,10 @@ $sizes-compiled: (
 
 // Map Compile
 // -----------
-@include describe('herman-map-compile [function]') {
+@include describe('pixu-map-compile [function]') {
   @include it('returns a map with values run through a given function') {
     @include assert-equal(
-      herman-map-compile($sizes, get-function('size')),
+      pixu-map-compile($sizes, get-function('size')),
       $sizes-compiled,
       $inspect: true
     );
@@ -45,43 +45,43 @@ $sizes-compiled: (
 
   @include it('allows extra args be passed in') {
     @include assert-equal(
-      herman-map-compile($colors-compiled, get-function('darken'), 20%),
+      pixu-map-compile($colors-compiled, get-function('darken'), 20%),
       $darken,
       $inspect: true
     );
   }
 }
 
-// Herman Add
+// Pixu Add
 // ----------
-@include describe('herman-add [mixin]') {
-  $herman: () !global;
+@include describe('pixu-add [mixin]') {
+  $pixu: () !global;
   $empty: ();
 
-  @include it('adds a map to the $herman global') {
-    @include assert-equal($herman, $empty);
+  @include it('adds a map to the $pixu global') {
+    @include assert-equal($pixu, $empty);
 
-    @include herman-add('colors', 'compiled', $colors-compiled);
+    @include pixu-add('colors', 'compiled', $colors-compiled);
     $expect: ('colors': ('compiled': $colors-compiled));
 
-    @include assert-equal($herman, $expect);
+    @include assert-equal($pixu, $expect);
   }
 
   @include it('adds to existing data of the type') {
-    @include herman-add('colors', 'darken', $darken);
-    $existing: map-get($herman, 'colors');
+    @include pixu-add('colors', 'darken', $darken);
+    $existing: map-get($pixu, 'colors');
     $new: ('compiled': $colors-compiled);
     $expect: ('colors': map-merge($existing, $new));
 
-    @include assert-equal($herman, $expect);
+    @include assert-equal($pixu, $expect);
   }
 
   @include it('accepts compilation functions') {
-    $herman: () !global;
+    $pixu: () !global;
 
-    @include assert-equal($herman, $empty);
+    @include assert-equal($pixu, $empty);
 
-    @include herman-add(
+    @include pixu-add(
       'colors',
       'dark',
       $colors-compiled,
@@ -90,6 +90,6 @@ $sizes-compiled: (
     );
     $expect: ('colors': ('dark': $darken));
 
-    @include assert-equal($herman, $expect, $inspect: true);
+    @include assert-equal($pixu, $expect, $inspect: true);
   }
 }

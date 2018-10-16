@@ -1,10 +1,10 @@
-# Herman Changelog
+# Pixu Changelog
 
 
 ## Unreleased
 
 - 🐛 BUGFIX: Improve error message when reading external files --
-  [#311](https://github.com/oddbird/sassdoc-theme-herman/issues/311)
+  [#311](https://github.com/oddbird/sassdoc-theme-pixu/issues/311)
 - 🏠 INTERNAL: Remove `node-sass` from `peerDependencies`
 - 🏠 INTERNAL: Upgrade dependencies
 
@@ -19,26 +19,26 @@
 ## 2.1.0: 2018-04-02
 
 - 🚀 NEW: Add `sass.outputStyle` option (default: `expanded`) --
-  [#263](https://github.com/oddbird/sassdoc-theme-herman/issues/263)
-- 🐛 BUGFIX: Escape backslashes in `herman-export` string values
-- 🐛 BUGFIX: Fix bug if annotations try to access missing `env.herman` --
-  [#273](https://github.com/oddbird/sassdoc-theme-herman/issues/273)
+  [#263](https://github.com/oddbird/sassdoc-theme-pixu/issues/263)
+- 🐛 BUGFIX: Escape backslashes in `pixu-export` string values
+- 🐛 BUGFIX: Fix bug if annotations try to access missing `env.pixu` --
+  [#273](https://github.com/oddbird/sassdoc-theme-pixu/issues/273)
 - 🐛 BUGFIX: Fix bug displaying tabs in `<code>` blocks --
-  [#271](https://github.com/oddbird/sassdoc-theme-herman/issues/271)
+  [#271](https://github.com/oddbird/sassdoc-theme-pixu/issues/271)
 - 🐛 BUGFIX: Fix bugs in `customCSS` URL re-writing --
-  [#265](https://github.com/oddbird/sassdoc-theme-herman/issues/265),
-  [#266](https://github.com/oddbird/sassdoc-theme-herman/issues/266)
+  [#265](https://github.com/oddbird/sassdoc-theme-pixu/issues/265),
+  [#266](https://github.com/oddbird/sassdoc-theme-pixu/issues/266)
 - 🏠 INTERNAL: Run tests on Windows --
-  [#270](https://github.com/oddbird/sassdoc-theme-herman/issues/270)
+  [#270](https://github.com/oddbird/sassdoc-theme-pixu/issues/270)
 - 🏠 INTERNAL: Upgrade dependencies
 
 
 ## 2.0.0: 2018-01-31
 
 - 🚀 NEW: Add support for CSS `@font-face` `local()` src in font previews --
-  [#173](https://github.com/oddbird/sassdoc-theme-herman/issues/173)
+  [#173](https://github.com/oddbird/sassdoc-theme-pixu/issues/173)
 - 🚀 NEW: Add support for embedded data-URI (`data:...`) font previews --
-  [#197](https://github.com/oddbird/sassdoc-theme-herman/issues/197)
+  [#197](https://github.com/oddbird/sassdoc-theme-pixu/issues/197)
 - 💥 BREAKING: Remove `@font` annotation "formats" option (`{woff, woff2}`) --
   replaced by `formats` key in font Sass map
 - 💥 BREAKING: Ignore `@font` Sass map top-level `svgid` option --
@@ -47,24 +47,24 @@
   src according to [fontsquirrel generated syntax](https://www.fontsquirrel.com/tools/webfont-generator)
 - 🏠 INTERNAL: Use [forked version of scss-comment-parser](https://github.com/jgerigmeyer/scss-comment-parser/tree/fix-semicolon)
   allowing semicolons in documented variable values (e.g. data-URIs) --
-  [#254](https://github.com/oddbird/sassdoc-theme-herman/issues/254)
+  [#254](https://github.com/oddbird/sassdoc-theme-pixu/issues/254)
 
 
 ## 1.1.0: 2018-01-17
 
 - 🚀 NEW: Extend SassDoc [groups](http://sassdoc.com/configuration/#groups)
   setting to allow nesting groups in named categories --
-  [#228](https://github.com/oddbird/sassdoc-theme-herman/issues/228)
-- 🐛 BUGFIX: Fix `herman-export` including incorrectly escaped quotes
+  [#228](https://github.com/oddbird/sassdoc-theme-pixu/issues/228)
+- 🐛 BUGFIX: Fix `pixu-export` including incorrectly escaped quotes
   (especially when compiled with Ruby Sass) --
-  [#236](https://github.com/oddbird/sassdoc-theme-herman/issues/236)
+  [#236](https://github.com/oddbird/sassdoc-theme-pixu/issues/236)
 - 🏠 INTERNAL: Remove deprecated dev-dependency `gulp-util`
 - 🏠 INTERNAL: Upgrade dependencies
 
 
 ## 1.0.1: 2018-01-03
 
-- 📝 DOCS: Document Herman-specific styles and patterns.
+- 📝 DOCS: Document Pixu-specific styles and patterns.
 - 🐛 BUGFIX: Open links within iframe in parent context
   (`<base target="_parent">`).
 
@@ -81,60 +81,60 @@
   (`@require` annotation callbacks)
 - New `@font`, `@colors`, `@sizes`, and `@ratios` annotations (replace
   `@preview` annotation) --
-  [#206](https://github.com/oddbird/sassdoc-theme-herman/issues/206)
+  [#206](https://github.com/oddbird/sassdoc-theme-pixu/issues/206)
 - Support for SassDoc [`googleAnalytics`][googleAnalytics] and
   [`trackingCode`][trackingCode] options --
-  [#215](https://github.com/oddbird/sassdoc-theme-herman/issues/215)
+  [#215](https://github.com/oddbird/sassdoc-theme-pixu/issues/215)
 - Site-wide search --
-  [#28](https://github.com/oddbird/sassdoc-theme-herman/issues/28)
+  [#28](https://github.com/oddbird/sassdoc-theme-pixu/issues/28)
 - `extraDocs` option: adds additional files (parsed as Markdown) --
-  [#117](https://github.com/oddbird/sassdoc-theme-herman/issues/117)
+  [#117](https://github.com/oddbird/sassdoc-theme-pixu/issues/117)
 - `extraLinks` option: adds external links to sidebar nav --
-  [#175](https://github.com/oddbird/sassdoc-theme-herman/issues/175)
+  [#175](https://github.com/oddbird/sassdoc-theme-pixu/issues/175)
 - `displayColors` option: customizes color formats displayed with `@colors`
   annotation
 - `customHTML` option: HTML to include in rendered `@example` annotations
   (replaces `minifiedIcons` option)
 - Support "prose" SassDoc comments, that aren't attached to a Sass block
   (parsed as Markdown)
-- Sass: `herman-export` mixin -- JSON-export functionality is now built-in
+- Sass: `pixu-export` mixin -- JSON-export functionality is now built-in
   Sass-json-export integration should continue to work as expected
-- Sass: `herman-add($key, $map, $args…)` function -- adds maps directly to
-  `$herman`, with optional function/args to compile raw map values
+- Sass: `pixu-add($key, $map, $args…)` function -- adds maps directly to
+  `$pixu`, with optional function/args to compile raw map values
 
 ### 💥 Breaking Changes
 
 - Require Node >= 6.0.0
 - Remove `@preview` annotation (replaced by new `@font`, `@colors`, `@sizes`,
   and `@ratios` annotations) --
-  [#206](https://github.com/oddbird/sassdoc-theme-herman/issues/206)
+  [#206](https://github.com/oddbird/sassdoc-theme-pixu/issues/206)
 - Remove `@macro` annotation (replaced by `@example njk`) --
-  [#182](https://github.com/oddbird/sassdoc-theme-herman/issues/182)
+  [#182](https://github.com/oddbird/sassdoc-theme-pixu/issues/182)
 - `@icons` annotation now only requires path to a folder of SVG icons: relative
   to the project directory, no longer relative to the `templatepath` option --
-  [#47](https://github.com/oddbird/sassdoc-theme-herman/issues/47)
-- Herman-specific options are now nested under top-level `herman` object in
+  [#47](https://github.com/oddbird/sassdoc-theme-pixu/issues/47)
+- Pixu-specific options are now nested under top-level `pixu` object in
   SassDoc configuration
 - Remove `minifiedIcons` option (replaced with new `customHTML` option)
 - Remove `customHead` option (replaced by multiline `@font` annotation)
-- Sass-specific options are now nested under `herman.sass` object
+- Sass-specific options are now nested under `pixu.sass` object
 - Remove top-level `templatepath` and `nunjucksEnv` options -- now nested
   under new `nunjucks` options object: `nunjucks.templatepath` and
   `nunjucks.environment`
 - `customCSS` is only included in rendered `@example` annotation iframes
 - Group navigation is now ordered according to config `groups` order --
-  [#150](https://github.com/oddbird/sassdoc-theme-herman/issues/150)
+  [#150](https://github.com/oddbird/sassdoc-theme-pixu/issues/150)
 - Preserve the original order of SassDoc comments, rather than grouping by type
-- Sass: `$herman` export map structure is now organized by type, in nested
+- Sass: `$pixu` export map structure is now organized by type, in nested
   maps: `colors`, `sizes`, `ratios`, and `fonts`
-- Sass: `herman-add` mixin now requires an initial `$type` argument,
+- Sass: `pixu-add` mixin now requires an initial `$type` argument,
   in order to assign the given data to the proper nested data-type map
-- Sass: Rename `$json` to `$herman` for clearer name-spacing
-- Sass: `_herman-inspect`, and `_herman-str-replace` are now considered private
+- Sass: Rename `$json` to `$pixu` for clearer name-spacing
+- Sass: `_pixu-inspect`, and `_pixu-str-replace` are now considered private
   functions
-- Sass: `herman-map-compile` always returns inspected (json-ready) values,
+- Sass: `pixu-map-compile` always returns inspected (json-ready) values,
   and now accepts function args
-- Sass: Remove `herman-add-colors`/`-sizes`/`-ratios`/`-font` from utils
+- Sass: Remove `pixu-add-colors`/`-sizes`/`-ratios`/`-font` from utils
 
 ### 🐛 Bug Fixes
 
@@ -144,59 +144,59 @@
   is set to `access: ['public']`
 - Fix assets referenced with relative urls in client-provided
   `customCSS` for `@example` annotations --
-  [#174](https://github.com/oddbird/sassdoc-theme-herman/issues/174)
+  [#174](https://github.com/oddbird/sassdoc-theme-pixu/issues/174)
 - Fix blocks with multi-line selectors and custom `@name` annotations --
-  [#140](https://github.com/oddbird/sassdoc-theme-herman/pull/140)
+  [#140](https://github.com/oddbird/sassdoc-theme-pixu/pull/140)
 - Fix broken internal links --
-  [#106](https://github.com/oddbird/sassdoc-theme-herman/issues/106)
+  [#106](https://github.com/oddbird/sassdoc-theme-pixu/issues/106)
 - Do not break layout on fonts with single-item stack --
-  [#172](https://github.com/oddbird/sassdoc-theme-herman/issues/172)
+  [#172](https://github.com/oddbird/sassdoc-theme-pixu/issues/172)
 
 ### 💅 Polish
 
-- Add attribution/link to Herman/OddBird in nav footer (hidden if
+- Add attribution/link to Pixu/OddBird in nav footer (hidden if
   `display.watermark` is set to `false`) --
-  [#154](https://github.com/oddbird/sassdoc-theme-herman/issues/154)
+  [#154](https://github.com/oddbird/sassdoc-theme-pixu/issues/154)
 - Replace [marked](https://github.com/chjj/marked) with
   [markdown-it](https://github.com/markdown-it/markdown-it) for Markdown
   parsing with quote beautification --
-  [#119](https://github.com/oddbird/sassdoc-theme-herman/issues/119)
+  [#119](https://github.com/oddbird/sassdoc-theme-pixu/issues/119)
 - Add "widont" text transformations with
   [typogr](https://github.com/ekalinin/typogr.js)
 - Pretty-print compiled HTML/Nunjucks with
   [html prettyprinter](https://github.com/maxogden/commonjs-html-prettyprinter)
-- Add Herman logo for default favicon --
-  [#155](https://github.com/oddbird/sassdoc-theme-herman/issues/155)
+- Add Pixu logo for default favicon --
+  [#155](https://github.com/oddbird/sassdoc-theme-pixu/issues/155)
 - Group identical colors in `@colors` color-palette --
-  [#123](https://github.com/oddbird/sassdoc-theme-herman/issues/123)
+  [#123](https://github.com/oddbird/sassdoc-theme-pixu/issues/123)
 - Display `@example` source and compiled code (njk and html; scss and css)
   side-by-side --
-  [#65](https://github.com/oddbird/sassdoc-theme-herman/issues/65),
-  [#37](https://github.com/oddbird/sassdoc-theme-herman/issues/37)
+  [#65](https://github.com/oddbird/sassdoc-theme-pixu/issues/65),
+  [#37](https://github.com/oddbird/sassdoc-theme-pixu/issues/37)
 - Display links on index pages to project home and source,
   when defined in the project `package.json` --
-  [#91](https://github.com/oddbird/sassdoc-theme-herman/issues/65)
+  [#91](https://github.com/oddbird/sassdoc-theme-pixu/issues/65)
 - Clean up display of parameters and properties --
-  [#53](https://github.com/oddbird/sassdoc-theme-herman/issues/53),
-  [#49](https://github.com/oddbird/sassdoc-theme-herman/issues/49),
-  [#55](https://github.com/oddbird/sassdoc-theme-herman/issues/55)
+  [#53](https://github.com/oddbird/sassdoc-theme-pixu/issues/53),
+  [#49](https://github.com/oddbird/sassdoc-theme-pixu/issues/49),
+  [#55](https://github.com/oddbird/sassdoc-theme-pixu/issues/55)
 - Re-brand with sidebar navigation --
-  [#58](https://github.com/oddbird/sassdoc-theme-herman/issues/58),
-  [#69](https://github.com/oddbird/sassdoc-theme-herman/issues/69)
+  [#58](https://github.com/oddbird/sassdoc-theme-pixu/issues/58),
+  [#69](https://github.com/oddbird/sassdoc-theme-pixu/issues/69)
 - Various branding and style improvements
 
 ### 🏠 Internal
 
 - Use [forked version of CDocParser](https://github.com/jgerigmeyer/CDocParser/tree/preserve-nested-comments)
   preserving `///` within comments --
-  [#212](https://github.com/oddbird/sassdoc-theme-herman/issues/212)
+  [#212](https://github.com/oddbird/sassdoc-theme-pixu/issues/212)
 - Use `installJinjaCompat` for default Nunjucks environment
 - Bundle static assets with Webpack; precompile JS with Babel --
-  [#205](https://github.com/oddbird/sassdoc-theme-herman/issues/205)
+  [#205](https://github.com/oddbird/sassdoc-theme-pixu/issues/205)
 - Do not minify compiled HTML assets --
-  [#186](https://github.com/oddbird/sassdoc-theme-herman/issues/186)
+  [#186](https://github.com/oddbird/sassdoc-theme-pixu/issues/186)
 - Move documentation to `docs/` and include in repo
-- Flesh out Herman documentation
+- Flesh out Pixu documentation
 - Use GoogleFonts rather than shipping font files
 - Add 100% test coverage
 - Update dependencies
@@ -212,9 +212,9 @@
 
 - NEW: Support SassDoc [`googleAnalytics`][googleAnalytics] and
   [`trackingCode`][trackingCode] options --
-  [#215](https://github.com/oddbird/sassdoc-theme-herman/issues/215)
+  [#215](https://github.com/oddbird/sassdoc-theme-pixu/issues/215)
 - CHANGE: Use forked version of CDocParser preserving `///` within comments --
-  [#212](https://github.com/oddbird/sassdoc-theme-herman/issues/212)
+  [#212](https://github.com/oddbird/sassdoc-theme-pixu/issues/212)
 - BUGFIX: Fix paths to custom assets referenced from `customCSS`.
 
 [googleAnalytics]: http://sassdoc.com/customising-the-view/#google-analytics
@@ -234,7 +234,7 @@
 ## 1.0.0-rc.4: 2017-12-04
 
 - BUGFIX: Fix broken site-search action attribute.
-- CHANGE: Hide Herman watermark if SassDoc `display.watermark` is `false`.
+- CHANGE: Hide Pixu watermark if SassDoc `display.watermark` is `false`.
 
 
 ## 1.0.0-rc.3: 2017-11-30
@@ -245,16 +245,16 @@
 ## 1.0.0-rc.2: 2017-11-30
 
 - NEW: Add site-wide search --
-  [#28](https://github.com/oddbird/sassdoc-theme-herman/issues/28)
+  [#28](https://github.com/oddbird/sassdoc-theme-pixu/issues/28)
 - CHANGE: Bundle static assets with Webpack; precompile JS with Babel --
-  [#205](https://github.com/oddbird/sassdoc-theme-herman/issues/205)
+  [#205](https://github.com/oddbird/sassdoc-theme-pixu/issues/205)
 - BREAKING: Remove `@preview` annotation, split it into distinct `@colors`,
   `@sizes`, `@ratios` annotations. `@colors`, `@ratios`, and `@sizes`
   annotations accept optional one-word key argument instead of
   semicolon-separated `key:value` arguments. `@sizes` still accepts `style`
   argument, now in curly-brackets (`{...}`). `count` argument removed from
   `@ratios` annotation --
-  [#206](https://github.com/oddbird/sassdoc-theme-herman/issues/206)
+  [#206](https://github.com/oddbird/sassdoc-theme-pixu/issues/206)
 - CHANGE: `@font` annotation accepts font name (first argument) without
   being wrapped in `'` or `"`.
 
@@ -262,34 +262,34 @@
 ## 1.0.0-rc.1: 2017-11-24
 
 - NEW: Add additional files (parsed as Markdown) with `extraDocs` option --
-  [#117](https://github.com/oddbird/sassdoc-theme-herman/issues/117)
+  [#117](https://github.com/oddbird/sassdoc-theme-pixu/issues/117)
 - CHANGE: JSON-export functionality is now built in
-  using the `herman-export` mixin.
+  using the `pixu-export` mixin.
   Sass-json-export integration should continue to work as expected.
 - Updated dependencies.
 - BREAKING: Remove `subprojects` option; replace with `extraLinks` option --
-  [#175](https://github.com/oddbird/sassdoc-theme-herman/issues/175)
+  [#175](https://github.com/oddbird/sassdoc-theme-pixu/issues/175)
 - BREAKING: Removed `@macro` annotation; use `@example njk` instead --
-  [#182](https://github.com/oddbird/sassdoc-theme-herman/issues/182)
+  [#182](https://github.com/oddbird/sassdoc-theme-pixu/issues/182)
 - CHANGE: HTML assets are no longer minified --
-  [#186](https://github.com/oddbird/sassdoc-theme-herman/issues/186)
+  [#186](https://github.com/oddbird/sassdoc-theme-pixu/issues/186)
 - CHANGE: Replace [marked](https://github.com/chjj/marked) with
   [markdown-it](https://github.com/markdown-it/markdown-it) for Markdown
   parsing with quote beautification --
-  [#119](https://github.com/oddbird/sassdoc-theme-herman/issues/119)
+  [#119](https://github.com/oddbird/sassdoc-theme-pixu/issues/119)
 - NEW: Add "widont" text transformations with
   [typogr](https://github.com/ekalinin/typogr.js).
 - BUGFIX: Ensure consistent ordering of `extraDocs`.
 - BREAKING: `@icons` annotation only requires path to a folder of SVG icons --
-  [#47](https://github.com/oddbird/sassdoc-theme-herman/issues/47)
+  [#47](https://github.com/oddbird/sassdoc-theme-pixu/issues/47)
 - BREAKING: Replace `minifiedIcons` option with `customHTML` option
   (only included in rendered `@example` annotations).
 - BREAKING: Nest `templatepath` and `nunjucksEnv` options under new `nunjucks`
   options object: `nunjucks.templatepath` and `nunjucks.environment`.
-- NEW: Add attribution/link to Herman/OddBird in nav footer --
-  [#154](https://github.com/oddbird/sassdoc-theme-herman/issues/154)
-- CHANGE: Use Herman logo for favicon. --
-  [#155](https://github.com/oddbird/sassdoc-theme-herman/issues/155)
+- NEW: Add attribution/link to Pixu/OddBird in nav footer --
+  [#154](https://github.com/oddbird/sassdoc-theme-pixu/issues/154)
+- CHANGE: Use Pixu logo for favicon. --
+  [#155](https://github.com/oddbird/sassdoc-theme-pixu/issues/155)
 
 
 ## 1.0.0-alpha.15: 2017-10-30
@@ -304,32 +304,32 @@
   since Sass 3.5+ modular sytems will make it unusable.
 - Updated dependencies.
 - BUGFIX: Fix broken internal links --
-  [#106](https://github.com/oddbird/sassdoc-theme-herman/issues/106)
+  [#106](https://github.com/oddbird/sassdoc-theme-pixu/issues/106)
 - BREAKING: Group navigation is ordered according to config `groups` order --
-  [#150](https://github.com/oddbird/sassdoc-theme-herman/issues/150)
+  [#150](https://github.com/oddbird/sassdoc-theme-pixu/issues/150)
 - BUGFIX: Do not error if `sass` config option is `undefined`.
 - BUGFIX: Do not break layout on fonts with single-item stack --
-  [#172](https://github.com/oddbird/sassdoc-theme-herman/issues/172)
+  [#172](https://github.com/oddbird/sassdoc-theme-pixu/issues/172)
 - BREAKING: `@preview font-specimen` is replaced by new `@font` annotation.
 - BREAKING: Removed `customHead` option; replaced by multiline `@font`
   annotation.
 - BUGFIX: Fix assets referenced with relative urls in client-provided
   `customCSS` for `@example` annotations --
-  [#174](https://github.com/oddbird/sassdoc-theme-herman/issues/174)
+  [#174](https://github.com/oddbird/sassdoc-theme-pixu/issues/174)
 
 
 ## 1.0.0-alpha.13: 2017-09-25
 
-- BREAKING: `$herman` export map structure is now organized by type,
+- BREAKING: `$pixu` export map structure is now organized by type,
   in nested maps: `colors`, `sizes`, `ratios`, and `fonts`.
-- BREAKING: `herman-add` mixin now requires an initial `$type` argument,
+- BREAKING: `pixu-add` mixin now requires an initial `$type` argument,
   in order to assign the given data to the proper nested data-type map.
 
 
 ## 1.0.0-alpha.12: 2017-09-18
 
 - BUGFIX: Typo from updating to latest accoutrement-scale
-- BUGFIX: Improved internal logic for `herman-map-compile` mixin
+- BUGFIX: Improved internal logic for `pixu-map-compile` mixin
 
 
 ## 1.0.0-alpha.11: 2017-09-18
@@ -339,24 +339,24 @@
 
 ## 1.0.0-alpha.10: 2017-09-14
 
-- BREAKING: Rename `$json` to `$herman` for clearer name-spacing
-- BREAKING: `_herman-inspect`, and `_herman-str-replace`
+- BREAKING: Rename `$json` to `$pixu` for clearer name-spacing
+- BREAKING: `_pixu-inspect`, and `_pixu-str-replace`
   are now considered private functions
-- BREAKING: `herman-map-compile` always returns inspected (json-ready) values,
+- BREAKING: `pixu-map-compile` always returns inspected (json-ready) values,
   and now accepts function args
-- BREAKING: Remove `herman-add-colors`/`-sizes`/`-ratios`/`-font` from utils
+- BREAKING: Remove `pixu-add-colors`/`-sizes`/`-ratios`/`-font` from utils
 - BREAKING: Require Node >= 6.0.0
-- NEW: Use `herman-add($key, $map, $args…)` to add maps directly to `$herman`,
+- NEW: Use `pixu-add($key, $map, $args…)` to add maps directly to `$pixu`,
   with optional function/args to compile raw map values
 - NEW: Use `accoutrement-add($type, $key, $map)` to automate compilation
   of accoutrement (color, ratio, size, font) maps,
-  while adding to both `$herman` and the appropriate accoutrement global
+  while adding to both `$pixu` and the appropriate accoutrement global
   (`$colors`, `$ratios`, `$sizes`, `$fonts`).
 - NEW: `displayColors` option (type: `Array`, default: `['hex', 'rgb', 'hsl']`)
 - CHANGE: Group identical colors in color-palette --
-  [#123](https://github.com/oddbird/sassdoc-theme-herman/issues/123)
+  [#123](https://github.com/oddbird/sassdoc-theme-pixu/issues/123)
 - BUGFIX: Fix blocks with multi-line selectors and custom @name annotations --
-  [#140](https://github.com/oddbird/sassdoc-theme-herman/pull/140)
+  [#140](https://github.com/oddbird/sassdoc-theme-pixu/pull/140)
 - DOCS: Move to `docs/` and include in repo.
 
 
@@ -397,7 +397,7 @@
 
 ## 1.0.0-alpha.4: 2017-06-02
 
-- BREAKING: Move `customHead` option into `herman` options object.
+- BREAKING: Move `customHead` option into `pixu` options object.
 - BUGFIX: Return correct promise from theme function (fixes early resolution).
 
 
@@ -418,35 +418,35 @@
 
 - Display links on index pages to project home and source,
   when defined in the project `package.json` --
-  [#91](https://github.com/oddbird/sassdoc-theme-herman/issues/65)
+  [#91](https://github.com/oddbird/sassdoc-theme-pixu/issues/65)
 - Clean up display of parameters and properties --
-  [#53](https://github.com/oddbird/sassdoc-theme-herman/issues/53) and
-  [#49](https://github.com/oddbird/sassdoc-theme-herman/issues/49) and
-  [#55](https://github.com/oddbird/sassdoc-theme-herman/issues/55)
+  [#53](https://github.com/oddbird/sassdoc-theme-pixu/issues/53) and
+  [#49](https://github.com/oddbird/sassdoc-theme-pixu/issues/49) and
+  [#55](https://github.com/oddbird/sassdoc-theme-pixu/issues/55)
 - Display source and compiled code (njk and html; scss and css) side-by-side --
-  [#65](https://github.com/oddbird/sassdoc-theme-herman/issues/65)
+  [#65](https://github.com/oddbird/sassdoc-theme-pixu/issues/65)
 - Add support for @todo annotation --
-  [#18](https://github.com/oddbird/sassdoc-theme-herman/issues/18)
+  [#18](https://github.com/oddbird/sassdoc-theme-pixu/issues/18)
 - Add support for @type annotation --
-  [#19](https://github.com/oddbird/sassdoc-theme-herman/issues/19)
+  [#19](https://github.com/oddbird/sassdoc-theme-pixu/issues/19)
 - Add support for @alias (and aliased callback) annotation --
-  [#5](https://github.com/oddbird/sassdoc-theme-herman/issues/5)
+  [#5](https://github.com/oddbird/sassdoc-theme-pixu/issues/5)
 - Add support for used-by (@require annotation callbacks).
 - Show compiled CSS for `@example scss` annotations --
-  [#37](https://github.com/oddbird/sassdoc-theme-herman/issues/37)
-- BREAKING: Nest Herman-specific options under `herman` object in sassdoc
-  configuration, and Sass-specific options under `herman.sass` object.
+  [#37](https://github.com/oddbird/sassdoc-theme-pixu/issues/37)
+- BREAKING: Nest Pixu-specific options under `pixu` object in sassdoc
+  configuration, and Sass-specific options under `pixu.sass` object.
 - Re-brand with sidebar navigation --
-  [#58](https://github.com/oddbird/sassdoc-theme-herman/issues/58) and
-  [#69](https://github.com/oddbird/sassdoc-theme-herman/issues/69).
+  [#58](https://github.com/oddbird/sassdoc-theme-pixu/issues/58) and
+  [#69](https://github.com/oddbird/sassdoc-theme-pixu/issues/69).
 - Add support for rendering documentation from dependency subprojects --
-  [#61](https://github.com/oddbird/sassdoc-theme-herman/issues/61).
+  [#61](https://github.com/oddbird/sassdoc-theme-pixu/issues/61).
 - BUGFIX: Do not link to internal `@access private` items if `display` option
   is set to `access: ['public']`.
-- BUGFIX: Do not error if missing `herman.subprojects` option --
-  [#107](https://github.com/oddbird/sassdoc-theme-herman/issues/107).
-- BUGFIX: Do not error if missing `herman` options --
-  [#108](https://github.com/oddbird/sassdoc-theme-herman/issues/108).
+- BUGFIX: Do not error if missing `pixu.subprojects` option --
+  [#107](https://github.com/oddbird/sassdoc-theme-pixu/issues/107).
+- BUGFIX: Do not error if missing `pixu` options --
+  [#108](https://github.com/oddbird/sassdoc-theme-pixu/issues/108).
 
 
 ## 0.5.5: 2017-02-22
@@ -458,13 +458,13 @@
 ## 0.5.4: 2017-01-16
 
 - Render type `html` examples to HTML --
-  [#45](https://github.com/oddbird/sassdoc-theme-herman/issues/45).
+  [#45](https://github.com/oddbird/sassdoc-theme-pixu/issues/45).
 
 
 ## 0.5.3: 2016-12-22
 
 - Prevent template render errors when data is missing. Fixes
-  [#44](https://github.com/oddbird/sassdoc-theme-herman/issues/44).
+  [#44](https://github.com/oddbird/sassdoc-theme-pixu/issues/44).
 
 
 ## 0.5.2: 2016-12-15
@@ -499,7 +499,7 @@
   so that previews don't have to be styled locally
 - Add [Sass Utilities](sass-utilities.html) file,
   for help with setting/exporting Sass data
-- `herman-add-color` mixin now exports hex, rgba, and hsla colors.
+- `pixu-add-color` mixin now exports hex, rgba, and hsla colors.
 - Simplified font previews don't require size input
 - Color, font, ratio, and size previews accept `key` argument,
   in case the JSON key doesn't match the variable name

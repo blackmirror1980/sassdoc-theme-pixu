@@ -116,7 +116,7 @@ describe('parse', function() {
       };
       const env = Object.assign(this.env, {
         localFonts: [path.resolve(__dirname, 'myfonts', 'font.ttf')],
-        herman: {
+        pixu: {
           fontpath: 'myfonts',
         },
       });

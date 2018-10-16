@@ -1,8 +1,8 @@
 // Root Typography
 // ===============
 
-/// # Herman Typography
-/// Initial styling for typographic elements in Herman.
+/// # Pixu Typography
+/// Initial styling for typographic elements in Pixu.
 /// Some typography is also inherited from the
 /// [Accoutrement-Init][init] normalization files.
 ///
@@ -18,12 +18,12 @@
   @include font-family('sans');
   font-size: size('root');
   font-size: size('responsive');
-  line-height: ratio('herman');
+  line-height: ratio('pixu');
 }
 
 // Selection
 // ---------
-/// Selected text uses a light color from the Herman color palette.
+/// Selected text uses a light color from the Pixu color palette.
 /// @group style-typography
 ::selection {
   background-color: color('callout');

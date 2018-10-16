@@ -1,9 +1,9 @@
-# [Herman][herman] [a [SassDoc][sassdoc] theme]
+# [Pixu][pixu] [a [SassDoc][sassdoc] theme]
 
-[![CircleCI](https://circleci.com/gh/oddbird/sassdoc-theme-herman/tree/master.svg?style=svg)](https://circleci.com/gh/oddbird/sassdoc-theme-herman/tree/master)
-[![AppVeyor](https://ci.appveyor.com/api/projects/status/w02fa9k998fywntl/branch/master?svg=true)](https://ci.appveyor.com/project/jgerigmeyer/sassdoc-theme-herman)
-[![Coverage Status](https://coveralls.io/repos/github/oddbird/sassdoc-theme-herman/badge.svg?branch=master)](https://coveralls.io/github/oddbird/sassdoc-theme-herman?branch=master)
-[![Greenkeeper badge](https://badges.greenkeeper.io/oddbird/sassdoc-theme-herman.svg)](https://greenkeeper.io/)
+[![CircleCI](https://circleci.com/gh/oddbird/sassdoc-theme-pixu/tree/master.svg?style=svg)](https://circleci.com/gh/oddbird/sassdoc-theme-pixu/tree/master)
+[![AppVeyor](https://ci.appveyor.com/api/projects/status/w02fa9k998fywntl/branch/master?svg=true)](https://ci.appveyor.com/project/jgerigmeyer/sassdoc-theme-pixu)
+[![Coverage Status](https://coveralls.io/repos/github/oddbird/sassdoc-theme-pixu/badge.svg?branch=master)](https://coveralls.io/github/oddbird/sassdoc-theme-pixu?branch=master)
+[![Greenkeeper badge](https://badges.greenkeeper.io/oddbird/sassdoc-theme-pixu.svg)](https://greenkeeper.io/)
 
 > **If it's not documented, it doesn't exist.**
 > Documentation should become the default --
@@ -22,7 +22,7 @@ from brand guidelines to UX patterns and code APIs:
 - Automated for a document that grows and changes
   along with the life of your project
 
-Herman is built as an extension to [SassDoc][sassdoc],
+Pixu is built as an extension to [SassDoc][sassdoc],
 and supports all their core functionality
 with additional support for
 [font specimens][font-docs], [color palettes][color-preview],
@@ -30,23 +30,23 @@ with additional support for
 [compiled languages][example-docs], Nunjucks/Jinja macros, HTML previews,
 and more.
 
-[font-docs]: http://oddbird.net/herman/docs/demo_fonts.html
-[color-preview]: http://oddbird.net/herman/docs/demo_colors.html
-[size-preview]: http://oddbird.net/herman/docs/demo_sizes.html
-[icon-docs]: http://oddbird.net/herman/docs/demo_icons.html
-[example-docs]: http://oddbird.net/herman/docs/demo_examples.html
+[font-docs]: http://oddbird.net/pixu/docs/demo_fonts.html
+[color-preview]: http://oddbird.net/pixu/docs/demo_colors.html
+[size-preview]: http://oddbird.net/pixu/docs/demo_sizes.html
+[icon-docs]: http://oddbird.net/pixu/docs/demo_icons.html
+[example-docs]: http://oddbird.net/pixu/docs/demo_examples.html
 
 
 ## Getting Started
 
 ```bash
-npm install sassdoc sassdoc-theme-herman
+npm install sassdoc sassdoc-theme-pixu
 ```
 
-Note: `node-sass` is required to use Herman
+Note: `node-sass` is required to use Pixu
 to display samples of Sass/Scss code.
 If it's not already installed in your project,
-install it along with Herman:
+install it along with Pixu:
 
 ```bash
 npm install node-sass
@@ -54,23 +54,23 @@ npm install node-sass
 
 See the [SassDoc documentation](http://sassdoc.com/getting-started/)
 to run SassDoc via various build tools.
-Specify `herman` as the theme
+Specify `pixu` as the theme
 in your SassDoc options:
 
 ```bash
-sassdoc <src> --theme herman
+sassdoc <src> --theme pixu
 ```
 
 
 ### SassDoc Comments
 
 Currently,
-all SassDoc/Herman annotations are written as Sass comments
+all SassDoc/Pixu annotations are written as Sass comments
 starting with `///` to differentiate documentation
 from other developer comments (`//`).
 
 ```scss
-// This comment will be ignored by Herman
+// This comment will be ignored by Pixu
 /// This comment will be rendered in the documentation
 ```
 
@@ -79,7 +79,7 @@ or attached to a particular Sass/CSS object --
 such as a variable, mixin, function, or selector block.
 Note that while SassDoc allows annotation comments
 to be separated from the documented code by newlines,
-Herman considers documentation to be free-floating "prose" if
+Pixu considers documentation to be free-floating "prose" if
 it is separated from documented code by one or more newlines.
 
 ```scss
@@ -90,7 +90,7 @@ it is separated from documented code by one or more newlines.
 ```
 
 
-### Herman Annotations
+### Pixu Annotations
 
 In addition to the core SassDoc annotations,
 our [`@icons` annotation][icon-docs] allows you to
@@ -104,18 +104,18 @@ and `@colors`, `@sizes`, and `@ratios` annotations
 for displaying [color-palettes][color-preview],
 [text and spacing sizes, and modular ratios][size-preview].
 
-[herman]: http://oddbird.net/herman/
+[pixu]: http://oddbird.net/pixu/
 [oddbird]: http://oddbird.net/
 [sassdoc]: http://sassdoc.com/
 
 [See the full documentation for details »][docs]
 
-[docs]: http://oddbird.net/herman/docs/CONFIGURATION.html
+[docs]: http://oddbird.net/pixu/docs/CONFIGURATION.html
 
 
 ## SassDoc Extras
 
-Herman uses a number of SassDoc Extras:
+Pixu uses a number of SassDoc Extras:
 
 - [Description](http://sassdoc.com/extra-tools/#description-description-descriptionpath)
 - [Display](http://sassdoc.com/extra-tools/#display-toggle-display)

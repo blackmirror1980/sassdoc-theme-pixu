@@ -212,7 +212,7 @@ describe('font annotation', function() {
     it('warns and exits if no jsonfile defined', function() {
       const env = {
         logger: { warn: sinon.fake() },
-        herman: {},
+        pixu: {},
       };
       const font = annotations.font(env);
 
@@ -229,7 +229,7 @@ describe('font annotation', function() {
     it('logs an error if missing Sass jsonfile', function(done) {
       const env = {
         logger: { warn: sinon.fake() },
-        herman: {
+        pixu: {
           sass: {
             jsonfile: `${__dirname}/no/such/file.json`,
           },
@@ -240,11 +240,11 @@ describe('font annotation', function() {
         .resolve(this.data)
         .then(() => {
           const errMsg = `ENOENT: no such file or directory, open '${
-            env.herman.sass.jsonfile
+            env.pixu.sass.jsonfile
           }'`;
           assert(
             env.logger.warn.calledWith(
-              `Error reading file: ${env.herman.sass.jsonfile}\n${errMsg}`
+              `Error reading file: ${env.pixu.sass.jsonfile}\n${errMsg}`
             )
           );
           done();
@@ -255,7 +255,7 @@ describe('font annotation', function() {
     it('warns and exits if no fontpath', function(done) {
       const env = {
         logger: { warn: sinon.fake() },
-        herman: {},
+        pixu: {},
         sassjson: {
           fonts: {
             'test-font': {
@@ -288,7 +288,7 @@ describe('font annotation', function() {
       const env = {
         dir: __dirname,
         logger: { warn: sinon.fake() },
-        herman: {
+        pixu: {
           fontpath: path.normalize('/path'),
           sass: {
             jsonfile: '/json',
@@ -331,7 +331,7 @@ describe('font annotation', function() {
 
     it('adds `@font-face` CSS for embedded `data:` fonts', function(done) {
       const env = {
-        herman: {},
+        pixu: {},
         sassjson: {
           fonts: {
             'test-font': {
@@ -374,7 +374,7 @@ describe('font annotation', function() {
     it('adds `@font-face` CSS for `local` names', function(done) {
       const env = {
         dir: __dirname,
-        herman: {
+        pixu: {
           fontpath: path.normalize('/path'),
         },
         sassjson: {
@@ -417,7 +417,7 @@ describe('font annotation', function() {
     it('adds separate `@font-face` for `eot` and `local`', function(done) {
       const env = {
         dir: __dirname,
-        herman: {
+        pixu: {
           fontpath: path.normalize('/path'),
         },
         sassjson: {
@@ -463,7 +463,7 @@ describe('font annotation', function() {
 
     it('adds separate `@font-face` for `eot` and `data:`', function(done) {
       const env = {
-        herman: {
+        pixu: {
           fontpath: '/path',
         },
         sassjson: {
@@ -501,7 +501,7 @@ describe('font annotation', function() {
 
     it('adds `@font-face` for embedded eot', function(done) {
       const env = {
-        herman: {
+        pixu: {
           fontpath: '/path',
         },
         sassjson: {
@@ -538,7 +538,7 @@ describe('font annotation', function() {
     it('adds svgid', function(done) {
       const env = {
         dir: __dirname,
-        herman: {
+        pixu: {
           fontpath: path.normalize('/path'),
         },
         sassjson: {
@@ -574,7 +574,7 @@ describe('font annotation', function() {
 
     it('allows setting `local` as a string', function(done) {
       const env = {
-        herman: {},
+        pixu: {},
         sassjson: {
           fonts: {
             'test-font': {
@@ -609,7 +609,7 @@ describe('font annotation', function() {
 
     it('stores parsed data for webfonts', function(done) {
       const env = {
-        herman: {},
+        pixu: {},
         sassjson: {
           fonts: {
             'test-font': {},
@@ -658,7 +658,7 @@ describe('font annotation', function() {
 
     it('skips localFont processing if formats is empty', function(done) {
       const env = {
-        herman: {
+        pixu: {
           fontpath: '/path',
         },
         sassjson: {
@@ -691,7 +691,7 @@ describe('font annotation', function() {
 
     it('fails on missing sassjson fontData', function(done) {
       const env = {
-        herman: {
+        pixu: {
           sass: {
             jsonfile: `${__dirname}/fixtures/css/json.css`,
           },
@@ -726,7 +726,7 @@ describe('font annotation', function() {
 
     it('skips localFonts processing if not a valid format', function(done) {
       const env = {
-        herman: {
+        pixu: {
           fontpath: '/path',
         },
         sassjson: {
@@ -762,7 +762,7 @@ describe('font annotation', function() {
 describe('example annotation', function() {
   beforeEach(function() {
     this.env = {
-      herman: {
+      pixu: {
         nunjucks: {
           templatepath: path.resolve(__dirname, 'fixtures', 'templates'),
         },
@@ -774,7 +774,7 @@ describe('example annotation', function() {
 
   describe('resolve', function() {
     it('warns and exits if no templatepath and njk @example used', function() {
-      const env = { logger: { warn: sinon.fake() }, herman: {} };
+      const env = { logger: { warn: sinon.fake() }, pixu: {} };
       const example = annotations.example(env);
       const data = [{ example: [{ type: 'njk' }] }];
 
@@ -865,7 +865,7 @@ describe('example annotation', function() {
 
     it('reports errors in sass compilation', function(done) {
       const env = extend(true, {}, this.env, {
-        herman: {
+        pixu: {
           sass: {},
         },
       });
@@ -908,7 +908,7 @@ describe('example annotation', function() {
         },
       ];
       const env = extend(true, {}, this.env, {
-        herman: {
+        pixu: {
           sass: {
             includes: ['~accoutrement-color/sass/utils', 'import'],
             includepaths: [path.join(__dirname, 'fixtures', 'scss')],
@@ -940,7 +940,7 @@ describe('example annotation', function() {
         },
       ];
       const env = extend(true, {}, this.env, {
-        herman: {
+        pixu: {
           sass: {
             outputstyle: 'compressed',
           },
@@ -1009,7 +1009,7 @@ describe('example annotation', function() {
     });
 
     it('warns only once about missing templatepath', function() {
-      const env = { logger: { warn: sinon.fake() }, herman: {} };
+      const env = { logger: { warn: sinon.fake() }, pixu: {} };
       const example = annotations.example(env);
       const data = [
         { example: [{ type: 'njk' }] },
@@ -1022,7 +1022,7 @@ describe('example annotation', function() {
     });
 
     it('does not warn if njk @example not used', function() {
-      const env = { logger: { warn: sinon.fake() }, herman: {} };
+      const env = { logger: { warn: sinon.fake() }, pixu: {} };
       const example = annotations.example(env);
       const data = [{}];
 
@@ -1062,7 +1062,7 @@ describe('example annotation', function() {
       nunjucksEnv.addFilter('plus_one', function(val) {
         return val + 1;
       });
-      const env = { herman: { nunjucks: { environment: nunjucksEnv } } };
+      const env = { pixu: { nunjucks: { environment: nunjucksEnv } } };
       const example = annotations.example(env);
       const data = [
         {

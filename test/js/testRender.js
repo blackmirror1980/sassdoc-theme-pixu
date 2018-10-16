@@ -27,7 +27,7 @@ describe('render', function() {
     render(nunjucksEnv, this.tpl, this.dest, ctx)
       .then(() => readFile(this.dest, 'utf-8'))
       .then(data => {
-        assert.ok(data.includes('<title>Title | Herman Documentation</title>'));
+        assert.ok(data.includes('<title>Title | Pixu Documentation</title>'));
         assert.ok(
           data.includes(
             '<p>I say: Hello<span class="widont">&nbsp;</span>World!</p>'

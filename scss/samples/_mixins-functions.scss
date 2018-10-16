@@ -3,14 +3,14 @@
 
 /// # SassDoc Annotations
 ///
-/// Herman supports all the core
+/// Pixu supports all the core
 /// [SassDoc annotations](http://sassdoc.com/annotations/).
 /// This page includes samples of every core annotation type,
-/// so you can see what they look like in Herman.
+/// so you can see what they look like in Pixu.
 ///
 /// @group demo_test-sassdoc
 
-// Herman Sample
+// Pixu Sample
 // -------------
 /// This is a sample function.
 /// You can actually put much more text in here,
@@ -43,9 +43,9 @@
 /// @returns {list} All three of the arguments in order
 /// @example scss - describe examples if you want...
 ///   .example::before {
-///     content: herman-sample(1, 2);
+///     content: pixu-sample(1, 2);
 ///   }
-@function herman-sample($one, $two: $one, $three: 'three') {
+@function pixu-sample($one, $two: $one, $three: 'three') {
   @if (not $one) or (not $two) or (not $three) {
     @error 'Please provide values for all three parameters';
   }
@@ -57,31 +57,31 @@
 // ------------
 /// This is a sample function alias.
 /// @group demo_test-sassdoc
-/// @alias herman-sample
+/// @alias pixu-sample
 /// @deprecated I don't think this alias is useful anymore
 @function sample-alias($one, $two: $one, $three: 'three') {
-  @return herman-sample($one, $two, $three);
+  @return pixu-sample($one, $two, $three);
 }
 
 // Sample Alias Two
 // ----------------
 /// This is a sample function alias.
 /// @group demo_test-sassdoc
-/// @alias herman-sample
+/// @alias pixu-sample
 /// @deprecated Doesn't seem to work without a message
 @function sample-alias-two($one, $two: $one, $three: 'three') {
-  @return herman-sample($one, $two, $three);
+  @return pixu-sample($one, $two, $three);
 }
 
 /// Extra Commentary
 /// ================
-/// Herman allows you to write "prose" markdown blocks,
+/// Pixu allows you to write "prose" markdown blocks,
 /// to help introduce groups,
 /// or add narrative flow between documented items.
 ///
 /// Note that while SassDoc allows annotation comments
 /// to be separated from the documented code by newlines,
-/// Herman considers documentation to be free-floating "prose" if
+/// Pixu considers documentation to be free-floating "prose" if
 /// it is separated from documented code by one or more newlines.
 ///
 /// Prose blocks can also include examples, and other annotations.

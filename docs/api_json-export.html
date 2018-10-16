@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <title>Exporting Styles to JSON | Herman Documentation</title>
+  <title>Exporting Styles to JSON | Pixu Documentation</title>
 
   <link href="assets/img/favicon.ico" rel="shortcut icon">
   <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,600|Source+Sans+Pro:400,400i,700,700i" rel="stylesheet">
@@ -40,7 +40,7 @@
 
 
       <div class="project-title">
-        <a href="index.html" rel="home" class="project-name">Herman</a>
+        <a href="index.html" rel="home" class="project-name">Pixu</a>
         
           <span class="project-version">3.0.0</span>
         
@@ -57,7 +57,7 @@
     <div class="nav-subsection">
       <h3 class="nav-home">
         
-        <a href="index.html" data-nav="is-not-active">Herman</a>
+        <a href="index.html" data-nav="is-not-active">Pixu</a>
       </h3>
 
       
@@ -259,7 +259,7 @@
 
     
       <aside class="footer-credit">
-        <a href="http://oddbird.net/herman/" class="footer-icon">
+        <a href="http://oddbird.net/pixu/" class="footer-icon">
           
   <svg data-icon="logo" data-icon-size="footer-logo" ><use xlink:href="#icon-logo" />
   </svg>
@@ -267,8 +267,8 @@
         </a>
         <span>
           Documented with
-          <a href="http://oddbird.net/herman/" class="footer-link">
-            Herman
+          <a href="http://oddbird.net/pixu/" class="footer-link">
+            Pixu
           </a>
         </span>
         <span>
@@ -286,7 +286,7 @@
         
   <nav class="breadcrumb">
     
-    <a href="index.html" >Herman</a> »
+    <a href="index.html" >Pixu</a> »
     <strong>Exporting Styles to JSON</strong>
   </nav>
 
@@ -321,15 +321,15 @@
 there are several abstract style patterns –
 like color-palettes and font-specimens –
 that never appear as components in the<span class="widont">&nbsp;</span>application.</p>
-<p>Herman provides several annotations
+<p>Pixu provides several annotations
 to help visualize these abstract patterns,
 but they require access to the raw Sass data.
 We do that using Sass maps
 (<code>key:value</code> object variables)
-and the <code>herman-export</code> mixin
+and the <code>pixu-export</code> mixin
 to generate JSON out of Sass<span class="widont">&nbsp;</span>variables.</p>
 <p>See the <a href="CONFIGURATION.html#sass-jsonfile"><code>sass.jsonfile</code> configuration</a>
-to ensure that Herman has access
+to ensure that Pixu has access
 to your exported Sass<span class="widont">&nbsp;</span>data.</p>
 
       
@@ -398,7 +398,7 @@ to your exported Sass<span class="widont">&nbsp;</span>data.</p>
 
       
       
-      <pre class="hljs-pre"><code class="lang-scss">$herman: (
+      <pre class="hljs-pre"><code class="lang-scss">$pixu: (
   &#39;colors&#39;: (
     &#39;brand-colors&#39;: (
       &#39;brand-orange&#39;: #c75000,
@@ -407,7 +407,7 @@ to your exported Sass<span class="widont">&nbsp;</span>data.</p>
   ),
 );
 
-@include herman-export($herman);</code></pre>
+@include pixu-export($pixu);</code></pre>
     </div>
   
 
@@ -472,7 +472,7 @@ to your exported Sass<span class="widont">&nbsp;</span>data.</p>
       <span class="item-type">@mixin</span>
       
         <a href="
-  api_json-export.html#mixin--herman-export" class="item-name">herman-export()</a>
+  api_json-export.html#mixin--pixu-export" class="item-name">pixu-export()</a>
       
       
       
@@ -522,7 +522,7 @@ to your exported Sass<span class="widont">&nbsp;</span>data.</p>
 
 
 
-<section class="item" id="variable--herman">
+<section class="item" id="variable--pixu">
   
     
   
@@ -540,7 +540,7 @@ to your exported Sass<span class="widont">&nbsp;</span>data.</p>
       
 
       
-        <a href="#variable--herman" class="item-name">$herman</a>
+        <a href="#variable--pixu" class="item-name">$pixu</a>
       
 
       
@@ -569,7 +569,7 @@ to your exported Sass<span class="widont">&nbsp;</span>data.</p>
 
       
       
-      <pre class="hljs-pre"><code class="lang-scss">$herman: () !default;</code></pre>
+      <pre class="hljs-pre"><code class="lang-scss">$pixu: () !default;</code></pre>
     </div>
   
 
@@ -581,19 +581,19 @@ to your exported Sass<span class="widont">&nbsp;</span>data.</p>
 
   
     <div class="text-block">
-      <p>Use the <code>$herman</code> map variable to collect and organize
+      <p>Use the <code>$pixu</code> map variable to collect and organize
 color, font, size, and ratio values for<span class="widont">&nbsp;</span>export.</p>
-<p>The <code>$herman</code> map should be structured
+<p>The <code>$pixu</code> map should be structured
 with top-level keys for each type of data,
 and nested maps of the individual items to preview.
-Use the <code>herman-add</code> mixin to automatically populate
+Use the <code>pixu-add</code> mixin to automatically populate
 fonts, colors, sizes, and ratios from existing maps –
-or construct your <code>$herman</code> map by hand,
+or construct your <code>$pixu</code> map by hand,
 following these<span class="widont">&nbsp;</span>guidelines…</p>
 <h3 id="map-structure">Map structure</h3>
 <p>Each type of preview value should be nested
 under a key that describes what type of data is being<span class="widont">&nbsp;</span>stored:</p>
-<pre><code class="lang-scss">$herman: (
+<pre><code class="lang-scss">$pixu: (
   'colors': (
     /* color maps */
   );
@@ -753,7 +753,7 @@ per format (e.g. <code>ttf</code>, <code>otf</code>, <code>woff2</code>, etc.)</
 
       
       
-      <pre class="hljs-pre"><code class="lang-scss">$herman: (
+      <pre class="hljs-pre"><code class="lang-scss">$pixu: (
   &#39;colors&#39;: (
     &#39;brand-colors&#39;: (
       &#39;brand-orange&#39;: &#39;#c75000&#39;,
@@ -836,7 +836,7 @@ per format (e.g. <code>ttf</code>, <code>otf</code>, <code>woff2</code>, etc.)</
       <span class="item-type">@mixin</span>
       
         <a href="
-  api_json-export.html#mixin--herman-add" class="item-name">herman-add()</a>
+  api_json-export.html#mixin--pixu-add" class="item-name">pixu-add()</a>
       
       
       
@@ -893,7 +893,7 @@ per format (e.g. <code>ttf</code>, <code>otf</code>, <code>woff2</code>, etc.)</
 
 
 
-<section class="item" id="mixin--herman-export">
+<section class="item" id="mixin--pixu-export">
   
     
   
@@ -911,7 +911,7 @@ per format (e.g. <code>ttf</code>, <code>otf</code>, <code>woff2</code>, etc.)</
       
 
       
-        <a href="#mixin--herman-export" class="item-name">herman-export()</a>
+        <a href="#mixin--pixu-export" class="item-name">pixu-export()</a>
       
 
       
@@ -981,7 +981,7 @@ and print to CSS output as a persistent<span class="widont">&nbsp;</span>comment
       
         <span class="item-name">$map:</span>
       
-      <span class="item-value">$herman</span>
+      <span class="item-value">$pixu</span>
       <span class="value-type">(map)</span>
       
     </h4>
@@ -1059,7 +1059,7 @@ and print to CSS output as a persistent<span class="widont">&nbsp;</span>comment
       
       
       <pre class="hljs-pre"><code class="lang-scss">// Export to JSON
-@include herman-export;</code></pre>
+@include pixu-export;</code></pre>
     </div>
   
 
@@ -1135,7 +1135,7 @@ and print to CSS output as a persistent<span class="widont">&nbsp;</span>comment
       <span class="item-type">@function</span>
       
         <a href="
-  config_api-utilities.html#function--_herman-encode" class="item-name">_herman-encode()</a>
+  config_api-utilities.html#function--_pixu-encode" class="item-name">_pixu-encode()</a>
       
       
       
@@ -1182,7 +1182,7 @@ and print to CSS output as a persistent<span class="widont">&nbsp;</span>comment
 
 
 
-<section class="item" id="mixin--herman-add">
+<section class="item" id="mixin--pixu-add">
   
     
   
@@ -1200,7 +1200,7 @@ and print to CSS output as a persistent<span class="widont">&nbsp;</span>comment
       
 
       
-        <a href="#mixin--herman-add" class="item-name">herman-add()</a>
+        <a href="#mixin--pixu-add" class="item-name">pixu-add()</a>
       
 
       
@@ -1222,7 +1222,7 @@ and print to CSS output as a persistent<span class="widont">&nbsp;</span>comment
   
     <div class="text-block">
       <p>Add a map of colors, fonts, sizes, ratios, etc
-to the <code>$herman</code> map for JSON-export,
+to the <code>$pixu</code> map for JSON-export,
 converting values to JSON-ready strings,
 with optional functions/args for compiling raw<span class="widont">&nbsp;</span>values.</p>
 
@@ -1398,7 +1398,7 @@ and any additional arguments for the<span class="widont">&nbsp;</span>function</
     
       
       <div class="param-details text-block">
-        <p>Updated <code>$herman</code> map, ready for JSON<span class="widont">&nbsp;</span>export</p>
+        <p>Updated <code>$pixu</code> map, ready for JSON<span class="widont">&nbsp;</span>export</p>
 
       </div>
     
@@ -1461,8 +1461,8 @@ and any additional arguments for the<span class="widont">&nbsp;</span>function</
   &#39;brand-blue&#39;: hsl(195, 85%, 35%),
   &#39;light-gray&#39;: &#39;brand-blue&#39; (&#39;tint&#39;: 80%, &#39;desaturate&#39;: 80%),
 );
-@include herman-add(&#39;colors&#39;, &#39;brand-colors&#39;, $brand-colors, get-function(&#39;color&#39;));
-/* #{$herman} */</code></pre>
+@include pixu-add(&#39;colors&#39;, &#39;brand-colors&#39;, $brand-colors, get-function(&#39;color&#39;));
+/* #{$pixu} */</code></pre>
     </div>
   
 
@@ -1539,7 +1539,7 @@ and any additional arguments for the<span class="widont">&nbsp;</span>function</
       <span class="item-type">@function</span>
       
         <a href="
-  api_json-export.html#function--herman-map-compile" class="item-name">herman-map-compile()</a>
+  api_json-export.html#function--pixu-map-compile" class="item-name">pixu-map-compile()</a>
       
       
       
@@ -1574,7 +1574,7 @@ and any additional arguments for the<span class="widont">&nbsp;</span>function</
       
       
         <a href="
-  config_api-utilities.html#variable--_herman-plural-types" class="item-name">$_herman-plural-types</a>
+  config_api-utilities.html#variable--_pixu-plural-types" class="item-name">$_pixu-plural-types</a>
       
       
       <span class="value-type">(map)</span>
@@ -1609,7 +1609,7 @@ and any additional arguments for the<span class="widont">&nbsp;</span>function</
       
       
         <a href="
-  api_json-export.html#variable--herman" class="item-name">$herman</a>
+  api_json-export.html#variable--pixu" class="item-name">$pixu</a>
       
       
       
@@ -1734,7 +1734,7 @@ and any additional arguments for the<span class="widont">&nbsp;</span>function</
 
 
 
-<section class="item" id="function--herman-map-compile">
+<section class="item" id="function--pixu-map-compile">
   
     
   
@@ -1752,7 +1752,7 @@ and any additional arguments for the<span class="widont">&nbsp;</span>function</
       
 
       
-        <a href="#function--herman-map-compile" class="item-name">herman-map-compile()</a>
+        <a href="#function--pixu-map-compile" class="item-name">pixu-map-compile()</a>
       
 
       
@@ -1776,7 +1776,7 @@ and any additional arguments for the<span class="widont">&nbsp;</span>function</
       <p>Pass the values of any map through a given function
 (with optional arguments)
 and return the compiled map.
-This is used by <code>herman-add</code> and <code>accoutrement-add</code>,
+This is used by <code>pixu-add</code> and <code>accoutrement-add</code>,
 but can also be accessed<span class="widont">&nbsp;</span>directly.</p>
 
       
@@ -1987,7 +1987,7 @@ and converted to json-ready<span class="widont">&nbsp;</span>strings</p>
   &#39;brand-blue&#39;: hsl(195, 85%, 35%),
   &#39;light-gray&#39;: &#39;brand-blue&#39; (&#39;tint&#39;: 80%, &#39;desaturate&#39;: 80%),
 );
-/* #{herman-map-compile($brand-colors, get-function(&#39;color&#39;))} */</code></pre>
+/* #{pixu-map-compile($brand-colors, get-function(&#39;color&#39;))} */</code></pre>
     </div>
   
 
@@ -2061,7 +2061,7 @@ and converted to json-ready<span class="widont">&nbsp;</span>strings</p>
       <span class="item-type">@mixin</span>
       
         <a href="
-  api_json-export.html#mixin--herman-add" class="item-name">herman-add()</a>
+  api_json-export.html#mixin--pixu-add" class="item-name">pixu-add()</a>
       
       
       

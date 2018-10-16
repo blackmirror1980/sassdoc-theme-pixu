@@ -20,7 +20,7 @@ const sassDocOpts = {
   src: './scss/**/*.scss',
   dest: sassdocPath,
   theme: __dirname,
-  herman: {
+  pixu: {
     extraDocs: [
       { name: 'Configuration', path: './CONFIGURATION.md' },
       { name: 'Changelog', path: './CHANGELOG.md' },
@@ -159,8 +159,8 @@ module.exports = {
     }),
     new SassDocPlugin(sassDocOpts, {
       assetPaths: [
-        { entry: 'app_styles', optPath: 'herman.customCSS' },
-        { entry: 'styleguide_json', optPath: 'herman.sass.jsonfile' },
+        { entry: 'app_styles', optPath: 'pixu.customCSS' },
+        { entry: 'styleguide_json', optPath: 'pixu.sass.jsonfile' },
       ],
       outputPath,
     }),

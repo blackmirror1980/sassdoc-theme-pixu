@@ -6,14 +6,14 @@ const fs = require('fs');
 const Promise = require('bluebird');
 
 const prepareContext = require('../../lib/prepareContext');
-const { renderHerman, makeNunjucksColors } = require('../../lib/renderHerman');
+const { renderPixu, makeNunjucksColors } = require('../../lib/renderPixu');
 
 const access = Promise.promisify(fs.access);
 
 describe('makeNunjucksColors', function() {
   before(function() {
     this.colors = makeNunjucksColors({
-      herman: {
+      pixu: {
         displayColors: undefined,
       },
     });
@@ -36,7 +36,7 @@ describe('makeNunjucksColors', function() {
 
   it('handles rgba and hsla', function() {
     const colors = makeNunjucksColors({
-      herman: {
+      pixu: {
         displayColors: ['rgba', 'hsla'],
       },
     });
@@ -50,7 +50,7 @@ describe('makeNunjucksColors', function() {
 
   it('passes on unknown format', function() {
     const colors = makeNunjucksColors({
-      herman: {
+      pixu: {
         displayColors: ['blorble'],
       },
     });
@@ -60,7 +60,7 @@ describe('makeNunjucksColors', function() {
   });
 });
 
-describe('renderHerman', function() {
+describe('renderPixu', function() {
   before(function() {
     this.dest = `${__dirname}/dest`;
   });
@@ -73,7 +73,7 @@ describe('renderHerman', function() {
     prepareContext({
       data: [],
     })
-      .then(ctx => renderHerman(this.dest, ctx))
+      .then(ctx => renderPixu(this.dest, ctx))
       .then(() => access(`${this.dest}/index.html`))
       .then(() => {
         assert.ok(true);
@@ -89,7 +89,7 @@ describe('renderHerman', function() {
       data: [],
       shortcutIcon,
     })
-      .then(ctx => renderHerman(this.dest, ctx))
+      .then(ctx => renderPixu(this.dest, ctx))
       .then(() => access(expectedShortcutIcon))
       .then(() => {
         assert.ok(true);
@@ -104,7 +104,7 @@ describe('renderHerman', function() {
       data: [],
       shortcutIcon: 'http://example.com/img/favicon.ico',
     })
-      .then(ctx => renderHerman(this.dest, ctx))
+      .then(ctx => renderPixu(this.dest, ctx))
       .then(() => access(expectedShortcutIcon))
       .then(() => {
         // The file should not have been copied
@@ -124,7 +124,7 @@ describe('renderHerman', function() {
         path: `${__dirname}/fixtures/css/main.css`,
       },
     })
-      .then(ctx => renderHerman(this.dest, ctx))
+      .then(ctx => renderPixu(this.dest, ctx))
       .then(() => access(`${this.dest}/assets/custom/main.css`))
       .then(() => {
         assert.ok(true);
@@ -141,7 +141,7 @@ describe('renderHerman', function() {
       },
       customCSSFiles: [`${__dirname}/fixtures/icons/not-an-svg-icon.png`],
     })
-      .then(ctx => renderHerman(this.dest, ctx))
+      .then(ctx => renderPixu(this.dest, ctx))
       .then(() => access(`${this.dest}/assets/custom/not-an-svg-icon.png`))
       .then(() => {
         assert.ok(true);
@@ -152,7 +152,7 @@ describe('renderHerman', function() {
 
   it('resolves local fonts', function(done) {
     prepareContext({
-      herman: {
+      pixu: {
         fontpath: 'fixtures/fonts',
       },
       data: [],
@@ -160,7 +160,7 @@ describe('renderHerman', function() {
     })
       .then(ctx => {
         ctx.dir = __dirname;
-        return renderHerman(this.dest, ctx);
+        return renderPixu(this.dest, ctx);
       })
       .then(() => access(`${this.dest}/assets/fonts/sample.ttf`))
       .then(() => {
@@ -181,7 +181,7 @@ describe('renderHerman', function() {
         },
       ],
     })
-      .then(ctx => renderHerman(this.dest, ctx))
+      .then(ctx => renderPixu(this.dest, ctx))
       .then(() => access(`${this.dest}/simple.html`))
       .then(() => {
         assert.ok(true);
@@ -231,7 +231,7 @@ describe('renderHerman', function() {
       .then(ctx => {
         // Test group that doesn't exist
         delete ctx.groups.fail;
-        return renderHerman(this.dest, ctx);
+        return renderPixu(this.dest, ctx);
       })
       .then(() => access(`${this.dest}/group1.html`))
       .then(() => access(`${this.dest}/group2.html`))
@@ -246,7 +246,7 @@ describe('renderHerman', function() {
     prepareContext({
       data: [],
     })
-      .then(ctx => renderHerman(this.dest, ctx))
+      .then(ctx => renderPixu(this.dest, ctx))
       .then(() => access(`${this.dest}/search-data.json`))
       .then(() => {
         assert.ok(true);

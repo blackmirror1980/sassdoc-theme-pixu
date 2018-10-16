@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <title>Font Specimens | Herman Documentation</title>
+  <title>Font Specimens | Pixu Documentation</title>
 
   <link href="assets/img/favicon.ico" rel="shortcut icon">
   <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,600|Source+Sans+Pro:400,400i,700,700i" rel="stylesheet">
@@ -40,7 +40,7 @@
 
 
       <div class="project-title">
-        <a href="index.html" rel="home" class="project-name">Herman</a>
+        <a href="index.html" rel="home" class="project-name">Pixu</a>
         
           <span class="project-version">3.0.0</span>
         
@@ -57,7 +57,7 @@
     <div class="nav-subsection">
       <h3 class="nav-home">
         
-        <a href="index.html" data-nav="is-not-active">Herman</a>
+        <a href="index.html" data-nav="is-not-active">Pixu</a>
       </h3>
 
       
@@ -259,7 +259,7 @@
 
     
       <aside class="footer-credit">
-        <a href="http://oddbird.net/herman/" class="footer-icon">
+        <a href="http://oddbird.net/pixu/" class="footer-icon">
           
   <svg data-icon="logo" data-icon-size="footer-logo" ><use xlink:href="#icon-logo" />
   </svg>
@@ -267,8 +267,8 @@
         </a>
         <span>
           Documented with
-          <a href="http://oddbird.net/herman/" class="footer-link">
-            Herman
+          <a href="http://oddbird.net/pixu/" class="footer-link">
+            Pixu
           </a>
         </span>
         <span>
@@ -286,7 +286,7 @@
         
   <nav class="breadcrumb">
     
-    <a href="index.html" >Herman</a> »
+    <a href="index.html" >Pixu</a> »
     <strong>Font Specimens</strong>
   </nav>
 
@@ -317,21 +317,21 @@
   
     <div data-item-section="prose" class="text-block">
       <h1 id="documenting-fonts">Documenting fonts</h1>
-<p>Herman provides custom annotations
+<p>Pixu provides custom annotations
 for visualizing fonts,
 along with other design tokens.
 See the <a href="CONFIGURATION.html#sass-jsonfile"><code>sass.jsonfile</code> configuration</a>
-to ensure that Herman has access
+to ensure that Pixu has access
 to your exported Sass<span class="widont">&nbsp;</span>data.</p>
 <p>Whether you use a webfont CDN like Typekit/Google Fonts,
 or locally-hosted font files,
-Herman can document and display your font-specimens.
-In order to do that, Herman will need a JSON map of font data –
+Pixu can document and display your font-specimens.
+In order to do that, Pixu will need a JSON map of font data –
 but we’ll start with individual font families,
 one hosted on a CDN, and the other hosted locally.
 Then we can build and<span class="widont">&nbsp;</span>export.</p>
 <p>We store all font data in maps,
-with the syntax used by both Herman (for JSON exporting)
+with the syntax used by both Pixu (for JSON exporting)
 and our [Accoutrement-Type][type] toolkit.
 <a href="api_json-export.html#fonts">See the font map documentation for details<span class="widont">&nbsp;</span>»</a></p>
 <p>Each font family will be displayed individually,
@@ -478,7 +478,7 @@ which defaults to the map-variable name.
 That key will be used to access the data from JSON,
 so it doesn’t matter what key is used –
 as long as the key given here matches the group-name
-used when adding this data to <code>$herman</code>.</li>
+used when adding this data to <code>$pixu</code>.</li>
 <li>The second argument (in parentheses) is an optional list
 of font variants to display in the preview.
 If omitted, it defaults to any variants
@@ -490,7 +490,7 @@ required to use the webfont.
 This code will be inserted
 into the rendered iframe <code>&lt;head&gt;</code>
 for this font preview
-and all <a href="demo_examples.html">Herman examples</a>,
+and all <a href="demo_examples.html">Pixu examples</a>,
 making your webfont available to other<span class="widont">&nbsp;</span>components.</li>
 </ul>
 
@@ -649,7 +649,7 @@ making your webfont available to other<span class="widont">&nbsp;</span>componen
 
   &lt;title&gt;fonts&lt;/title&gt;
 
-  &lt;!-- Herman styles and fonts --&gt;
+  &lt;!-- Pixu styles and fonts --&gt;
   &lt;link href=&quot;https://fonts.googleapis.com/css?family=Source+Code+Pro:400,600|Source+Sans+Pro:400,400i,700,700i&quot; rel=&quot;stylesheet&quot;&gt;
   &lt;link rel=&quot;stylesheet&quot; href=&quot;assets/webpack/app_styles.min.css&quot; /&gt;
 
@@ -846,7 +846,7 @@ which defaults to the map-variable name.
 That key will be used to access the data from JSON,
 so it doesn’t matter what key is used –
 as long as the key given here matches the group-name
-used when adding this data to <code>$herman</code>.</li>
+used when adding this data to <code>$pixu</code>.</li>
 <li>The second argument (in parentheses) is an optional list
 of font variants to display in the preview.
 If omitted, it defaults to all variants
@@ -856,10 +856,10 @@ included as keys in the font map<span class="widont">&nbsp;</span>itself.</li>
 </code></pre>
 <p>In order for this to work,
 you must specify a <code>fontpath</code>
-(the path where Herman will look to import local font files),
-in your SassDoc <code>herman</code> configuration object.</p>
+(the path where Pixu will look to import local font files),
+in your SassDoc <code>pixu</code> configuration object.</p>
 <pre><code class="lang-yaml"># .sassdocrc (yaml)
-herman:
+pixu:
   fontpath: 'fonts/'
 </code></pre>
 
@@ -965,7 +965,7 @@ herman:
 
   &lt;title&gt;fonts&lt;/title&gt;
 
-  &lt;!-- Herman styles and fonts --&gt;
+  &lt;!-- Pixu styles and fonts --&gt;
   &lt;link href=&quot;https://fonts.googleapis.com/css?family=Source+Code+Pro:400,600|Source+Sans+Pro:400,400i,700,700i&quot; rel=&quot;stylesheet&quot;&gt;
   &lt;link rel=&quot;stylesheet&quot; href=&quot;assets/webpack/app_styles.min.css&quot; /&gt;
 
@@ -1156,18 +1156,18 @@ herman:
 
   
     <div data-item-section="prose" class="text-block">
-      <h2 id="add-font-data-to-herman">Add font data to<span class="widont">&nbsp;</span>$herman</h2>
+      <h2 id="add-font-data-to-pixu">Add font data to<span class="widont">&nbsp;</span>$pixu</h2>
 <p>In order to preview the <code>$demo-cdn</code> and <code>$demo-local</code> maps,
 we also need to <a href="api_json-export.html">export the data to<span class="widont">&nbsp;</span>JSON</a>.</p>
-<p>You can add data to the <code>$herman</code> export-map by hand,
-or use the provided <code>herman-add</code> mixin
+<p>You can add data to the <code>$pixu</code> export-map by hand,
+or use the provided <code>pixu-add</code> mixin
 to combine existing maps into the proper structure.
 <a href="api_json-export.html#fonts">See the font map documentation for<span class="widont">&nbsp;</span>details</a>.</p>
-<pre><code class="lang-scss"> @include herman-add('font', 'demo-code', $demo-code);
- @include herman-add('font', 'demo-local', $demo-local);
+<pre><code class="lang-scss"> @include pixu-add('font', 'demo-code', $demo-code);
+ @include pixu-add('font', 'demo-local', $demo-local);
 </code></pre>
-<p>After adding your data to the <code>$herman</code> map,
-it can be converted to JSON using <code>herman-export</code>.</p>
+<p>After adding your data to the <code>$pixu</code> map,
+it can be converted to JSON using <code>pixu-export</code>.</p>
 
       
   
@@ -1245,7 +1245,7 @@ it can be converted to JSON using <code>herman-export</code>.</p>
       
       
         <a href="
-  api_json-export.html#variable--herman" class="item-name">$herman</a>
+  api_json-export.html#variable--pixu" class="item-name">$pixu</a>
       
       
       
@@ -1270,7 +1270,7 @@ it can be converted to JSON using <code>herman-export</code>.</p>
       <span class="item-type">@mixin</span>
       
         <a href="
-  api_json-export.html#mixin--herman-add" class="item-name">herman-add()</a>
+  api_json-export.html#mixin--pixu-add" class="item-name">pixu-add()</a>
       
       
       
@@ -1295,7 +1295,7 @@ it can be converted to JSON using <code>herman-export</code>.</p>
       <span class="item-type">@mixin</span>
       
         <a href="
-  api_json-export.html#mixin--herman-export" class="item-name">herman-export()</a>
+  api_json-export.html#mixin--pixu-export" class="item-name">pixu-export()</a>
       
       
       

@@ -24,7 +24,7 @@ describe('prepareContext', function() {
         orderedGroups: ['undefined'],
         subgroupsByGroup: {},
         sort: ['group', 'file', 'line', 'access'],
-        herman: {
+        pixu: {
           nunjucks: {},
           sass: {},
         },
@@ -42,7 +42,7 @@ describe('prepareContext', function() {
     const warn = sinon.fake();
     prepareContext({
       data: [],
-      herman: {
+      pixu: {
         extraDocs: [
           `${__dirname}/fixtures/markdown/simple.md`,
           {
@@ -85,7 +85,7 @@ describe('prepareContext', function() {
   it('sets extraLinks', function(done) {
     prepareContext({
       data: [],
-      herman: {
+      pixu: {
         extraLinks: ['http://oddbird.net'],
       },
     })
@@ -106,7 +106,7 @@ describe('prepareContext', function() {
     };
     prepareContext({
       data: [],
-      herman: {
+      pixu: {
         sass: {
           jsonfile: `${__dirname}/fixtures/css/json.css`,
         },
@@ -124,7 +124,7 @@ describe('prepareContext', function() {
     prepareContext({
       data: [],
       logger: { warn },
-      herman: {
+      pixu: {
         sass: {
           jsonfile: `${__dirname}/fixtures/css/missing-json.css`,
         },

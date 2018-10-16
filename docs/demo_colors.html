@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <title>Color Palettes | Herman Documentation</title>
+  <title>Color Palettes | Pixu Documentation</title>
 
   <link href="assets/img/favicon.ico" rel="shortcut icon">
   <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,600|Source+Sans+Pro:400,400i,700,700i" rel="stylesheet">
@@ -40,7 +40,7 @@
 
 
       <div class="project-title">
-        <a href="index.html" rel="home" class="project-name">Herman</a>
+        <a href="index.html" rel="home" class="project-name">Pixu</a>
         
           <span class="project-version">3.0.0</span>
         
@@ -57,7 +57,7 @@
     <div class="nav-subsection">
       <h3 class="nav-home">
         
-        <a href="index.html" data-nav="is-not-active">Herman</a>
+        <a href="index.html" data-nav="is-not-active">Pixu</a>
       </h3>
 
       
@@ -259,7 +259,7 @@
 
     
       <aside class="footer-credit">
-        <a href="http://oddbird.net/herman/" class="footer-icon">
+        <a href="http://oddbird.net/pixu/" class="footer-icon">
           
   <svg data-icon="logo" data-icon-size="footer-logo" ><use xlink:href="#icon-logo" />
   </svg>
@@ -267,8 +267,8 @@
         </a>
         <span>
           Documented with
-          <a href="http://oddbird.net/herman/" class="footer-link">
-            Herman
+          <a href="http://oddbird.net/pixu/" class="footer-link">
+            Pixu
           </a>
         </span>
         <span>
@@ -286,7 +286,7 @@
         
   <nav class="breadcrumb">
     
-    <a href="index.html" >Herman</a> »
+    <a href="index.html" >Pixu</a> »
     <strong>Color Palettes</strong>
   </nav>
 
@@ -317,16 +317,16 @@
   
     <div data-item-section="prose" class="text-block">
       <h1 id="documenting-colors">Documenting colors</h1>
-<p>Herman provides custom annotations
+<p>Pixu provides custom annotations
 for visualizing color palettes,
 along with other design tokens.
 See the <a href="CONFIGURATION.html#sass-jsonfile"><code>sass.jsonfile</code> configuration</a>
-to ensure that Herman has access
+to ensure that Pixu has access
 to your exported Sass<span class="widont">&nbsp;</span>data.</p>
 <p>Whether you store colors as individual variables
 or group them into a map,
-you can use Herman to document and display color palettes.
-In the end, Herman will need a map
+you can use Pixu to document and display color palettes.
+In the end, Pixu will need a map
 converted to JSON –
 but we’ll start with individual colors,
 and build the export from<span class="widont">&nbsp;</span>there.</p>
@@ -461,14 +461,14 @@ $brand-pink: hsl(330, 85%, 48%);
   
     <div class="text-block">
       <h2 id="preview-color-maps-as-palettes">Preview color maps as<span class="widont">&nbsp;</span>palettes</h2>
-<p>In order to export our colors to Herman,
+<p>In order to export our colors to Pixu,
 we’ll want to combine them into a map
 of name/value pairs.
 Sass does not provide any shortcuts for automating this step,
 or removing the duplication,
 but you can use a tool like our <a href="http://oddbird.net/accoutrement-color/">Accoutrement-Color</a>
 to store and access colors
-directly in a Herman-friendly<span class="widont">&nbsp;</span>map.</p>
+directly in a Pixu-friendly<span class="widont">&nbsp;</span>map.</p>
 <p>Create as many maps as you like
 to organize different palettes –
 primary, secondary, button-colors, etc.
@@ -483,15 +483,15 @@ on the first line after the <code>///</code> SassDoc documentation).
 That key will be used to access the data from JSON,
 so it doesn’t matter what key is used,
 as long as the key given here matches the group-name
-used when adding this data to <code>$herman</code>.</p>
+used when adding this data to <code>$pixu</code>.</p>
 <pre><code class="lang-scss">/// @colors my-colors
 </code></pre>
 <p>By default, our color palettes display
 <code>name</code>, <code>hex</code>, <code>rgb(a)</code>, and <code>hsl(a)</code> for every color.
 You can change what color values are shown
-in the SassDoc/Herman configuration
-using the <code>herman.displayColors</code> option:</p>
-<pre><code class="lang-yaml">herman:
+in the SassDoc/Pixu configuration
+using the <code>pixu.displayColors</code> option:</p>
+<pre><code class="lang-yaml">pixu:
   displayColors:
     - hex
     - hsl
@@ -647,33 +647,33 @@ using the <code>herman.displayColors</code> option:</p>
 
   
     <div data-item-section="prose" class="text-block">
-      <h2 id="add-color-data-to-herman">Add color-data to<span class="widont">&nbsp;</span>$herman</h2>
+      <h2 id="add-color-data-to-pixu">Add color-data to<span class="widont">&nbsp;</span>$pixu</h2>
 <p>In order to preview the <code>$demo-colors</code> palette,
 we need to export the data to JSON.
 That’s a two-step process:
 first building the export-map,
 and then creating a sass file to do the actual export.
 We provide shortcuts to help with<span class="widont">&nbsp;</span>both.</p>
-<p>Use the <code>herman-add</code> mixin to add individual data maps
+<p>Use the <code>pixu-add</code> mixin to add individual data maps
 to the global export<span class="widont">&nbsp;</span>map.</p>
-<pre><code class="lang-scss"> @include herman-add('colors', 'demo-colors', $demo-colors);
+<pre><code class="lang-scss"> @include pixu-add('colors', 'demo-colors', $demo-colors);
 </code></pre>
 <ul>
-<li>The first argument tells Herman what type of data is being added –
+<li>The first argument tells Pixu what type of data is being added –
 in this case <code>colors</code>.
-Herman will organize the output JSON into subgroups by type.
+Pixu will organize the output JSON into subgroups by type.
 We use this to our advantage,
-passing the exported colors to application-js as well as Herman,
+passing the exported colors to application-js as well as Pixu,
 so colors defined in Sass can be accessed in<span class="widont">&nbsp;</span>JavaScript.</li>
 <li>The second argument sets a <code>key</code> name
 for accessing this particular group of colors.
-The <code>herman-add</code> key should match
+The <code>pixu-add</code> key should match
 the key provided to <code>@colors</code>.</li>
 <li>The third argument provides the actual map of data
-to be added to the <code>$herman</code> export map.</li>
+to be added to the <code>$pixu</code> export map.</li>
 </ul>
 <p>The result is an export map that looks like<span class="widont">&nbsp;</span>this:</p>
-<pre><code class="lang-scss">$herman: (
+<pre><code class="lang-scss">$pixu: (
   'colors': (
     'demo-colors': (
       'brand-blue': hsl(195, 85%, 35%),
@@ -741,7 +741,7 @@ to be added to the <code>$herman</code> export map.</li>
       
       
         <a href="
-  api_json-export.html#variable--herman" class="item-name">$herman</a>
+  api_json-export.html#variable--pixu" class="item-name">$pixu</a>
       
       
       
@@ -766,7 +766,7 @@ to be added to the <code>$herman</code> export map.</li>
       <span class="item-type">@mixin</span>
       
         <a href="
-  api_json-export.html#mixin--herman-add" class="item-name">herman-add()</a>
+  api_json-export.html#mixin--pixu-add" class="item-name">pixu-add()</a>
       
       
       
@@ -829,7 +829,7 @@ to be added to the <code>$herman</code> export map.</li>
       <h2 id="compile-and-export-complex-maps">Compile and export complex<span class="widont">&nbsp;</span>maps</h2>
 <p>At OddBird, we store our colors in more complex maps,
 where the values need to be parsed and compiled
-before they can be exported to Herman.
+before they can be exported to Pixu.
 Using <a href="http://oddbird.net/accoutrement-color">accoutrement-color</a>, our maps look like<span class="widont">&nbsp;</span>this:</p>
 <pre><code class="lang-scss">$demo-noncolors: (
   'light-gray': 'brand-blue' ('tint': 80%, 'desaturate': 80%),
@@ -839,10 +839,10 @@ Using <a href="http://oddbird.net/accoutrement-color">accoutrement-color</a>, ou
 </code></pre>
 <p>Our <code>color()</code> function knows how to interpret that syntax
 and compile actual colors based on our map notation.
-In order to export real color data to Herman,
+In order to export real color data to Pixu,
 we want to run every value in our map
 through the color function before exporting.
-<code>herman-add</code> accepts additional arguments at the end,
+<code>pixu-add</code> accepts additional arguments at the end,
 for passing each map-value through a function.
 Provide a function name (Sass 3.4-),
 or first-class function (Sass 3.5+)
@@ -914,19 +914,19 @@ along with any additional arguments required for that<span class="widont">&nbsp;
 
       
       
-      <pre class="hljs-pre"><code class="lang-scss">$herman: ();
+      <pre class="hljs-pre"><code class="lang-scss">$pixu: ();
 $demo-noncolors: (
   &#39;light-gray&#39;: &#39;brand-blue&#39; (&#39;tint&#39;: 80%, &#39;desaturate&#39;: 80%),
   &#39;gray&#39;: &#39;brand-blue&#39; (&#39;desaturate&#39;: 80%),
   &#39;black&#39;: &#39;brand-blue&#39; (&#39;shade&#39;: 30%, &#39;desaturate&#39;: 80%),
 );
 
-@include herman-add(
+@include pixu-add(
   &#39;colors&#39;, &#39;demo-noncolors&#39;, $demo-noncolors,
   get-function(&#39;color&#39;) // function
 );
 
-/* #{$herman} */</code></pre>
+/* #{$pixu} */</code></pre>
     </div>
   
 

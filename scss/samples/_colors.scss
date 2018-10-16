@@ -3,19 +3,19 @@
 
 /// # Documenting colors
 ///
-/// Herman provides custom annotations
+/// Pixu provides custom annotations
 /// for visualizing color palettes,
 /// along with other design tokens.
 /// See the [`sass.jsonfile` configuration][json]
-/// to ensure that Herman has access
+/// to ensure that Pixu has access
 /// to your exported Sass data.
 ///
 /// [json]: CONFIGURATION.html#sass-jsonfile
 ///
 /// Whether you store colors as individual variables
 /// or group them into a map,
-/// you can use Herman to document and display color palettes.
-/// In the end, Herman will need a map
+/// you can use Pixu to document and display color palettes.
+/// In the end, Pixu will need a map
 /// converted to JSON --
 /// but we'll start with individual colors,
 /// and build the export from there.
@@ -34,14 +34,14 @@ $brand-pink: hsl(330, 85%, 48%);
 
 /// ## Preview color maps as palettes
 ///
-/// In order to export our colors to Herman,
+/// In order to export our colors to Pixu,
 /// we'll want to combine them into a map
 /// of name/value pairs.
 /// Sass does not provide any shortcuts for automating this step,
 /// or removing the duplication,
 /// but you can use a tool like our [Accoutrement-Color][color]
 /// to store and access colors
-/// directly in a Herman-friendly map.
+/// directly in a Pixu-friendly map.
 ///
 /// [color]: http://oddbird.net/accoutrement-color/
 ///
@@ -62,7 +62,7 @@ $brand-pink: hsl(330, 85%, 48%);
 /// That key will be used to access the data from JSON,
 /// so it doesn't matter what key is used,
 /// as long as the key given here matches the group-name
-/// used when adding this data to `$herman`.
+/// used when adding this data to `$pixu`.
 ///
 /// ```scss
 /// /// @colors my-colors
@@ -71,11 +71,11 @@ $brand-pink: hsl(330, 85%, 48%);
 /// By default, our color palettes display
 /// `name`, `hex`, `rgb(a)`, and `hsl(a)` for every color.
 /// You can change what color values are shown
-/// in the SassDoc/Herman configuration
-/// using the `herman.displayColors` option:
+/// in the SassDoc/Pixu configuration
+/// using the `pixu.displayColors` option:
 ///
 /// ```yaml
-/// herman:
+/// pixu:
 ///   displayColors:
 ///     - hex
 ///     - hsl
@@ -88,7 +88,7 @@ $demo-colors: (
   'brand-pink': $brand-pink
 );
 
-/// ## Add color-data to $herman
+/// ## Add color-data to $pixu
 ///
 /// In order to preview the `$demo-colors` palette,
 /// we need to export the data to JSON.
@@ -97,30 +97,30 @@ $demo-colors: (
 /// and then creating a sass file to do the actual export.
 /// We provide shortcuts to help with both.
 ///
-/// Use the `herman-add` mixin to add individual data maps
+/// Use the `pixu-add` mixin to add individual data maps
 /// to the global export map.
 ///
 /// ```scss
-///  @include herman-add('colors', 'demo-colors', $demo-colors);
+///  @include pixu-add('colors', 'demo-colors', $demo-colors);
 /// ```
 ///
-/// - The first argument tells Herman what type of data is being added --
+/// - The first argument tells Pixu what type of data is being added --
 ///   in this case `colors`.
-///   Herman will organize the output JSON into subgroups by type.
+///   Pixu will organize the output JSON into subgroups by type.
 ///   We use this to our advantage,
-///   passing the exported colors to application-js as well as Herman,
+///   passing the exported colors to application-js as well as Pixu,
 ///   so colors defined in Sass can be accessed in JavaScript.
 /// - The second argument sets a `key` name
 ///   for accessing this particular group of colors.
-///   The `herman-add` key should match
+///   The `pixu-add` key should match
 ///   the key provided to `@colors`.
 /// - The third argument provides the actual map of data
-///   to be added to the `$herman` export map.
+///   to be added to the `$pixu` export map.
 ///
 /// The result is an export map that looks like this:
 ///
 /// ```scss
-/// $herman: (
+/// $pixu: (
 ///   'colors': (
 ///     'demo-colors': (
 ///       'brand-blue': hsl(195, 85%, 35%),
@@ -136,10 +136,10 @@ $demo-colors: (
 ///
 /// [color-docs]: api_json-export.html#colors
 ///
-/// @see $herman
-/// @see herman-add
+/// @see $pixu
+/// @see pixu-add
 /// @group demo_colors
-@include herman-add('colors', 'demo-colors', $demo-colors);
+@include pixu-add('colors', 'demo-colors', $demo-colors);
 
 $demo-noncolors: (
   'light-gray': 'brand-blue' ('tint': 80%, 'desaturate': 80%),
@@ -151,7 +151,7 @@ $demo-noncolors: (
 ///
 /// At OddBird, we store our colors in more complex maps,
 /// where the values need to be parsed and compiled
-/// before they can be exported to Herman.
+/// before they can be exported to Pixu.
 /// Using [accoutrement-color][ac], our maps look like this:
 ///
 /// [ac]: http://oddbird.net/accoutrement-color
@@ -166,10 +166,10 @@ $demo-noncolors: (
 ///
 /// Our `color()` function knows how to interpret that syntax
 /// and compile actual colors based on our map notation.
-/// In order to export real color data to Herman,
+/// In order to export real color data to Pixu,
 /// we want to run every value in our map
 /// through the color function before exporting.
-/// `herman-add` accepts additional arguments at the end,
+/// `pixu-add` accepts additional arguments at the end,
 /// for passing each map-value through a function.
 /// Provide a function name (Sass 3.4-),
 /// or first-class function (Sass 3.5+)
@@ -177,23 +177,23 @@ $demo-noncolors: (
 ///
 /// @colors demo-noncolors
 /// @example scss
-///   $herman: ();
+///   $pixu: ();
 ///   $demo-noncolors: (
 ///     'light-gray': 'brand-blue' ('tint': 80%, 'desaturate': 80%),
 ///     'gray': 'brand-blue' ('desaturate': 80%),
 ///     'black': 'brand-blue' ('shade': 30%, 'desaturate': 80%),
 ///   );
 ///
-///   @include herman-add(
+///   @include pixu-add(
 ///     'colors', 'demo-noncolors', $demo-noncolors,
 ///     get-function('color') // function
 ///   );
 ///
-///   /* #{$herman} */
+///   /* #{$pixu} */
 ///
 /// @group demo_colors
 /// @link http://oddbird.net/accoutrement-color Accoutrement-Color
-@include herman-add(
+@include pixu-add(
   'colors',
   'demo-noncolors',
   $demo-noncolors,

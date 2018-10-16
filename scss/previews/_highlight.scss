@@ -8,7 +8,7 @@
 // -----------
 /// Colors for code-highlighting with hljs,
 /// based on [Solarized-Light](http://ethanschoonover.com/solarized)
-/// & the Herman brand.
+/// & the Pixu brand.
 /// @group style-code
 /// @colors
 $hljs-colors: (
@@ -22,7 +22,7 @@ $hljs-colors: (
   'hljs-formula': #eee8d5
 );
 
-@include herman-add('colors', 'hljs-colors', $hljs-colors);
+@include pixu-add('colors', 'hljs-colors', $hljs-colors);
 
 .hljs-comment,
 .hljs-quote {

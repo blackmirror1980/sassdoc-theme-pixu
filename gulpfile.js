@@ -375,7 +375,7 @@ gulp.task('browser-sync', cb => {
         baseDir: paths.DOCS_DIR,
       },
       logLevel: 'info',
-      logPrefix: 'herman',
+      logPrefix: 'pixu',
       notify: false,
       ghostMode: false,
       files: [`${paths.DOCS_DIR}**/*`],

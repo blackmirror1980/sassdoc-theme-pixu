@@ -1,7 +1,7 @@
 // Accoutrement Utils
 // ==================
 
-/// # Herman Config: Private Helpers
+/// # Pixu Config: Private Helpers
 /// @group config-utils
 
 // Functions
@@ -30,11 +30,11 @@ $functions: (
 
 // Config
 // ------
-/// Internal utility for managing Herman and Accoutrement maps
+/// Internal utility for managing Pixu and Accoutrement maps
 /// in one single mixin.
 /// In preparation for the Sass 3.5+ modular syntax,
 /// this can only be done in the project being documented,
-/// and is not included as part of the Herman API.
+/// and is not included as part of the Pixu API.
 ///
 /// @group config-utils
 /// @link http://oddbird.net/accoutrement-color Accoutrement-Color
@@ -50,7 +50,7 @@ $functions: (
 ///   e.g. `'brand-colors'` for the `$brand-colors` variable.
 /// @param {map} $value -
 ///   The map data to be added to both
-///   Accoutrement globals and Herman export.
+///   Accoutrement globals and Pixu export.
 ///
 /// @example scss
 ///   $brand-colors: (
@@ -63,15 +63,15 @@ $functions: (
 @mixin config($type, $name, $value) {
   @if index('color' 'colors', $type) {
     @include add-colors($value);
-    @include herman-add($type, $name, $value, get-function('color'));
+    @include pixu-add($type, $name, $value, get-function('color'));
   } @else if index('size' 'sizes', $type) {
     $sizes: map-merge($sizes, $value) !global;
-    @include herman-add($type, $name, $value, get-function('size'));
+    @include pixu-add($type, $name, $value, get-function('size'));
   } @else if index('ratio' 'ratios', $type) {
     $ratios: map-merge($ratios, $value) !global;
-    @include herman-add($type, $name, $value, get-function('ratio'));
+    @include pixu-add($type, $name, $value, get-function('ratio'));
   } @else if index('font' 'fonts', $type) {
     @include add-font($name, $value);
-    @include herman-add($type, $name, $value);
+    @include pixu-add($type, $name, $value);
   }
 }

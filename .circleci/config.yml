@@ -2,15 +2,15 @@ version: 2
 jobs:
 
   build:
-    working_directory: ~/herman
+    working_directory: ~/pixu
     docker:
       - image: circleci/node:8-browsers
     steps:
       - checkout
       - restore_cache:
           keys:
-            - herman-yarn-{{ checksum "yarn.lock" }}
-            - herman-yarn-
+            - pixu-yarn-{{ checksum "yarn.lock" }}
+            - pixu-yarn-
       - run:
           name: Update yarn.lock [greenkeeper]
           command: |
@@ -36,49 +36,49 @@ jobs:
               exit 1
             fi
       - save_cache:
-          key: herman-yarn-{{ checksum "yarn.lock" }}
+          key: pixu-yarn-{{ checksum "yarn.lock" }}
           paths:
             - "~/.cache/yarn"
       - save_cache:
-          key: herman-node-modules-{{ checksum "yarn.lock" }}
+          key: pixu-node-modules-{{ checksum "yarn.lock" }}
           paths:
-            - "~/herman/node_modules"
+            - "~/pixu/node_modules"
 
   build-node-6:
-    working_directory: ~/herman
+    working_directory: ~/pixu
     docker:
       - image: node:6
     steps:
       - checkout
       - restore_cache:
           keys:
-            - herman-node6-{{ checksum "yarn.lock" }}
-            - herman-node6-
+            - pixu-node6-{{ checksum "yarn.lock" }}
+            - pixu-node6-
       - run:
           name: Install Dependencies
           command: yarn
       - save_cache:
-          key: herman-node6-{{ checksum "yarn.lock" }}
+          key: pixu-node6-{{ checksum "yarn.lock" }}
           paths:
             - "~/.cache/yarn"
       - save_cache:
-          key: herman-node6-modules-{{ checksum "yarn.lock" }}
+          key: pixu-node6-modules-{{ checksum "yarn.lock" }}
           paths:
-            - "~/herman/node_modules"
+            - "~/pixu/node_modules"
 
   lint:
-    working_directory: ~/herman
+    working_directory: ~/pixu
     docker:
       - image: circleci/node:8-browsers
     steps:
       - checkout
       - restore_cache:
           keys:
-            - herman-node-modules-{{ checksum "yarn.lock" }}
-            - herman-node-modules-
+            - pixu-node-modules-{{ checksum "yarn.lock" }}
+            - pixu-node-modules-
       - run:
           name: Set $PATH
-          command: echo 'export PATH=~/herman/node_modules/.bin:$PATH' >> $BASH_ENV
+          command: echo 'export PATH=~/pixu/node_modules/.bin:$PATH' >> $BASH_ENV
       - run:
           name: Lint JS
           command: gulp eslint
@@ -87,35 +87,35 @@ jobs:
           command: gulp sasslint
 
   test-sass:
-    working_directory: ~/herman
+    working_directory: ~/pixu
     docker:
       - image: circleci/node:8-browsers
     steps:
       - checkout
       - restore_cache:
           keys:
-            - herman-node-modules-{{ checksum "yarn.lock" }}
-            - herman-node-modules-
+            - pixu-node-modules-{{ checksum "yarn.lock" }}
+            - pixu-node-modules-
       - run:
           name: Set $PATH
-          command: echo 'export PATH=~/herman/node_modules/.bin:$PATH' >> $BASH_ENV
+          command: echo 'export PATH=~/pixu/node_modules/.bin:$PATH' >> $BASH_ENV
       - run:
           name: Test Sass
           command: gulp sasstest
 
   test-js:
-    working_directory: ~/herman
+    working_directory: ~/pixu
     docker:
       - image: circleci/node:8-browsers
     steps:
       - checkout
       - restore_cache:
           keys:
-            - herman-node-modules-{{ checksum "yarn.lock" }}
-            - herman-node-modules-
+            - pixu-node-modules-{{ checksum "yarn.lock" }}
+            - pixu-node-modules-
       - run:
           name: Set $PATH
-          command: echo 'export PATH=~/herman/node_modules/.bin:$PATH' >> $BASH_ENV
+          command: echo 'export PATH=~/pixu/node_modules/.bin:$PATH' >> $BASH_ENV
       - run:
           name: Run JS Tests
           command: gulp jstest
@@ -142,18 +142,18 @@ jobs:
           path: jscov
 
   test-node-6:
-    working_directory: ~/herman
+    working_directory: ~/pixu
     docker:
       - image: node:6
     steps:
       - checkout
       - restore_cache:
           keys:
-            - herman-node6-modules-{{ checksum "yarn.lock" }}
-            - herman-node6-modules-
+            - pixu-node6-modules-{{ checksum "yarn.lock" }}
+            - pixu-node6-modules-
       - run:
           name: Set $PATH
-          command: echo 'export PATH=~/herman/node_modules/.bin:$PATH' >> $BASH_ENV
+          command: echo 'export PATH=~/pixu/node_modules/.bin:$PATH' >> $BASH_ENV
       - run:
           name: Run JS Tests [node 6]
           command: gulp jstest

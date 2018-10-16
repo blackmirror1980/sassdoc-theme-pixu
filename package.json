@@ -1,9 +1,9 @@
 {
-  "name": "sassdoc-theme-herman",
-  "title": "Herman",
+  "name": "sassdoc-theme-pixu",
+  "title": "Pixu",
   "description": "An Odd SassDoc theme.",
   "version": "3.0.0",
-  "homepage": "http://oddbird.net/herman/",
+  "homepage": "http://oddbird.net/pixu/",
   "keywords": [
     "sassdoc-theme"
   ],
@@ -109,7 +109,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/oddbird/sassdoc-theme-herman.git"
+    "url": "https://github.com/oddbird/sassdoc-theme-pixu.git"
   },
   "lint-staged": {
     "{lib/,test/}**/*.js": [

@@ -12,7 +12,7 @@ describe('renderIframe', function() {
   describe('example', function() {
     beforeEach(function() {
       this.env = {
-        herman: {
+        pixu: {
           customCSS: 'test/js/fixtures/css/main.css',
           customHTML: 'templates/_icons.svg',
         },
@@ -54,15 +54,15 @@ describe('renderIframe', function() {
       });
     });
 
-    it('inserts raw HTML if env.herman.customHTML is bad path', function(done) {
+    it('inserts raw HTML if env.pixu.customHTML is bad path', function(done) {
       const env = extend({}, this.env);
-      env.herman.customHTML = 'foo.bar';
+      env.pixu.customHTML = 'foo.bar';
       const item = {
         rendered: true,
       };
 
       renderIframe(this.env, item, 'example').then(() => {
-        assert.equal(this.env.customHTML, this.env.herman.customHTML);
+        assert.equal(this.env.customHTML, this.env.pixu.customHTML);
 
         done();
       });
@@ -107,7 +107,7 @@ describe('renderIframe', function() {
   describe('font', function() {
     beforeEach(function() {
       this.env = {
-        herman: {
+        pixu: {
           sass: {
             jsonfile: path.resolve(__dirname, 'fixtures', 'css', 'json.css'),
           },
@@ -142,7 +142,7 @@ describe('renderIframe', function() {
 
     it('logs the error on a bad sassjson', function(done) {
       const env = extend({}, this.env);
-      env.herman.sass.jsonfile = 'foo.bar';
+      env.pixu.sass.jsonfile = 'foo.bar';
       const item = {
         font: {
           key: true,

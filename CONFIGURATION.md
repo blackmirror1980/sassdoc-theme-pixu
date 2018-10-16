@@ -1,14 +1,14 @@
-# Herman Configuration Options
+# Pixu Configuration Options
 
-Nest all Herman-specific options
-under `herman` object in [SassDoc config][sdconfig].
+Nest all Pixu-specific options
+under `pixu` object in [SassDoc config][sdconfig].
 
 [sdconfig]: http://sassdoc.com/configuration/
 
 ```yaml
 # .sassdocrc
-theme: herman
-herman:
+theme: pixu
+pixu:
   extraDocs:
     - './my-file.md'
 ```
@@ -18,8 +18,8 @@ herman:
 const sassdoc = require('sassdoc');
 
 sassdoc('./scss', {
-  theme: 'herman',
-  herman: {
+  theme: 'pixu',
+  pixu: {
     extraDocs: ['./my-file.md']
   }
 });
@@ -34,7 +34,7 @@ All relative paths are relative to the SassDoc config file or the `cwd`.
 - Default: `{ undefined: 'General' }`
 
 Groups are a SassDoc configuration option,
-not nested inside the Herman block --
+not nested inside the Pixu block --
 though we provide some extra functionality
 on top of the [SassDoc configuration][groups].
 In addition to naming groups,
@@ -100,7 +100,7 @@ Configures which color value formats are shown
 when using the [`@colors` annotation][color-preview].
 Valid options: `hex`, `rgb/rgba`, `hsl/hsla`
 
-[color-preview]: http://oddbird.net/herman/docs/demo_colors.html
+[color-preview]: http://oddbird.net/pixu/docs/demo_colors.html
 
 
 ## customCSS
@@ -125,17 +125,17 @@ which will be included in the `<head>` of rendered
 - If your custom CSS contains internal links
   referenced with `url(...)`
   (e.g. local fonts or background images),
-  Herman will attempt to copy in those assets
+  Pixu will attempt to copy in those assets
   so that they are available
   in your rendered `@example` annotations.
   This means that the paths must either be absolute,
   or relative to the location of the CSS file itself.
-  If using Webpack to bundle your Herman `customCSS`,
+  If using Webpack to bundle your Pixu `customCSS`,
   this likely means [disabling the `publicPath` setting][extract-text]
   for this CSS file (e.g. `publicPath: ''`),
   or [disabling Webpack's `url()` pre-processing][css-loader] entirely.
 
-[font-docs-webfonts]: http://oddbird.net/herman/docs/demo_fonts.html#displaying-webfonts
+[font-docs-webfonts]: http://oddbird.net/pixu/docs/demo_fonts.html#displaying-webfonts
 [extract-text]: https://github.com/webpack-contrib/extract-text-webpack-plugin#extract
 [css-loader]: https://github.com/webpack-contrib/css-loader#url
 
@@ -152,7 +152,7 @@ See our [`@example` documentation][example-docs].
 This is particularly useful for including svg sprite sheets
 in example output.
 
-[example-docs]: http://oddbird.net/herman/docs/demo_examples.html
+[example-docs]: http://oddbird.net/pixu/docs/demo_examples.html
 
 
 ## fontpath
@@ -166,7 +166,7 @@ files.*
 Relative path to a directory containing local font files.
 See our [`@font` documentation][font-docs-local].
 
-[font-docs-local]: http://oddbird.net/herman/docs/demo_fonts.html#displaying-local-fonts
+[font-docs-local]: http://oddbird.net/pixu/docs/demo_fonts.html#displaying-local-fonts
 
 
 ## nunjucks
@@ -202,7 +202,7 @@ Relative path to a directory containing Nunjucks templates.
 `nunjucks.environment` is required if using
 [`@example njk` annotation][example-njk].*
 
-[example-njk]: http://oddbird.net/herman/docs/demo_examples.html#compiling-nunjucks
+[example-njk]: http://oddbird.net/pixu/docs/demo_examples.html#compiling-nunjucks
 
 
 ## sass
@@ -222,17 +222,17 @@ Container for the following sass-related options:
 [`@ratios`][ratio-preview], or [`@sizes`][size-preview] annotations.*
 
 Relative path to a `sass-json file`
-(created with the [`herman-export` mixin][export-mixin]).
+(created with the [`pixu-export` mixin][export-mixin]).
 The JSON contents will be added under the
 `sassjson` key of the sassdoc context,
 and used to display colors, fonts, ratios, and sizes.
 See [Exporting Styles to JSON][export].
 
-[font-docs]: http://oddbird.net/herman/docs/demo_fonts.html
-[ratio-preview]: http://oddbird.net/herman/docs/demo_sizes.html#preview-ratios
-[size-preview]: http://oddbird.net/herman/docs/demo_sizes.html#preview-sizes
-[export]: http://oddbird.net/herman/docs/api_json-export.html
-[export-mixin]: http://oddbird.net/herman/docs/api_json-export.html#mixin--herman-export
+[font-docs]: http://oddbird.net/pixu/docs/demo_fonts.html
+[ratio-preview]: http://oddbird.net/pixu/docs/demo_sizes.html#preview-ratios
+[size-preview]: http://oddbird.net/pixu/docs/demo_sizes.html#preview-sizes
+[export]: http://oddbird.net/pixu/docs/api_json-export.html
+[export-mixin]: http://oddbird.net/pixu/docs/api_json-export.html#mixin--pixu-export
 
 
 ### sass.includepaths
@@ -263,7 +263,7 @@ that may be used by any example.
 It's best to avoid files with output CSS,
 as that output will be displayed in every single Sass example.
 
-[example-docs-scss]: http://oddbird.net/herman/docs/demo_examples.html#compiling-sass-scss
+[example-docs-scss]: http://oddbird.net/pixu/docs/demo_examples.html#compiling-sass-scss
 
 
 ### sass.outputstyle

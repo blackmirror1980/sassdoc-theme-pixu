@@ -1,6 +1,6 @@
-# Contributing to Herman
+# Contributing to Pixu
 
-Thanks for contributing to Herman development!
+Thanks for contributing to Pixu development!
 
 Feature requests and bug reports
 can be filed on [GitHub][github]:
@@ -11,13 +11,13 @@ can be filed on [GitHub][github]:
 - Help reduce the problem to the smallest code sample possible,
   and provide the relevant code
 
-[github]: https://github.com/oddbird/sassdoc-theme-herman/issues
+[github]: https://github.com/oddbird/sassdoc-theme-pixu/issues
 
 If you are contributing code
 with new features or bug-fixes:
 
 - Fork the project, and create a branch for your contribution
-- Follow the development guide below to get Herman running locally
+- Follow the development guide below to get Pixu running locally
 - Write tests and documentation as necessary,
   and make sure all tests are passing
 - Open a pull request on [GitHub][github]

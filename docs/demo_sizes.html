@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <title>Ratios &amp; Sizes | Herman Documentation</title>
+  <title>Ratios &amp; Sizes | Pixu Documentation</title>
 
   <link href="assets/img/favicon.ico" rel="shortcut icon">
   <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,600|Source+Sans+Pro:400,400i,700,700i" rel="stylesheet">
@@ -40,7 +40,7 @@
 
 
       <div class="project-title">
-        <a href="index.html" rel="home" class="project-name">Herman</a>
+        <a href="index.html" rel="home" class="project-name">Pixu</a>
         
           <span class="project-version">3.0.0</span>
         
@@ -57,7 +57,7 @@
     <div class="nav-subsection">
       <h3 class="nav-home">
         
-        <a href="index.html" data-nav="is-not-active">Herman</a>
+        <a href="index.html" data-nav="is-not-active">Pixu</a>
       </h3>
 
       
@@ -259,7 +259,7 @@
 
     
       <aside class="footer-credit">
-        <a href="http://oddbird.net/herman/" class="footer-icon">
+        <a href="http://oddbird.net/pixu/" class="footer-icon">
           
   <svg data-icon="logo" data-icon-size="footer-logo" ><use xlink:href="#icon-logo" />
   </svg>
@@ -267,8 +267,8 @@
         </a>
         <span>
           Documented with
-          <a href="http://oddbird.net/herman/" class="footer-link">
-            Herman
+          <a href="http://oddbird.net/pixu/" class="footer-link">
+            Pixu
           </a>
         </span>
         <span>
@@ -286,7 +286,7 @@
         
   <nav class="breadcrumb">
     
-    <a href="index.html" >Herman</a> »
+    <a href="index.html" >Pixu</a> »
     <strong>Ratios &amp; Sizes</strong>
   </nav>
 
@@ -317,15 +317,15 @@
   
     <div data-item-section="prose" class="text-block">
       <h1 id="documenting-ratios-sizes">Documenting ratios &amp;<span class="widont">&nbsp;</span>sizes</h1>
-<p>Herman provides custom annotations
+<p>Pixu provides custom annotations
 for visualizing sizes and ratios,
 along with other design tokens.
 See the <a href="CONFIGURATION.html#sass-jsonfile"><code>sass.jsonfile</code> configuration</a>
-to ensure that Herman has access
+to ensure that Pixu has access
 to your exported Sass<span class="widont">&nbsp;</span>data.</p>
 <p>In addition to documenting colors and fonts,
-you can use Herman to document and display ratios and sizes.
-In the end, Herman will need a map –
+you can use Pixu to document and display ratios and sizes.
+In the end, Pixu will need a map –
 but we’ll start with individual ratios/sizes,
 and build the export from<span class="widont">&nbsp;</span>there.</p>
 <p>Let’s start with a ratio and two<span class="widont">&nbsp;</span>sizes:</p>
@@ -457,14 +457,14 @@ $xlarge: 3rem;
   
     <div class="text-block">
       <h2 id="preview-ratios">Preview ratios</h2>
-<p>In order to export our ratios to Herman,
+<p>In order to export our ratios to Pixu,
 we’ll want to combine them into maps
 of name/value pairs.
 Sass does not provide any shortcuts for automating this step,
 or removing the duplication,
 but you can use a tool like our <a href="http://oddbird.net/accoutrement-scale/">Accoutrement-Scale</a>
 to store and access ratios
-directly in a Herman-friendly<span class="widont">&nbsp;</span>map.</p>
+directly in a Pixu-friendly<span class="widont">&nbsp;</span>map.</p>
 <pre><code class="lang-scss">$demo-ratios: (
   'line-height': $line-height-ratio
 );
@@ -481,7 +481,7 @@ which defaults to the map-variable name.
 That key will be used to access the data from JSON,
 so it doesn’t matter what key is used,
 as long as the key given here matches the group-name
-used when adding this data to <code>$herman</code>.</p>
+used when adding this data to <code>$pixu</code>.</p>
 
       
   
@@ -833,11 +833,11 @@ used when adding this data to <code>$herman</code>.</p>
       <h2 id="preview-sizes">Preview sizes</h2>
 <p>Similar to ratios,
 sizes can be combined into any number of maps
-to preview with Herman.
+to preview with Pixu.
 you can build these maps out of existing variables,
 or use a tool like our <a href="http://oddbird.net/accoutrement-scale/">Accoutrement-Scale</a>
 to store and access sizes
-directly in a Herman-friendly<span class="widont">&nbsp;</span>map.</p>
+directly in a Pixu-friendly<span class="widont">&nbsp;</span>map.</p>
 <pre><code class="lang-scss">$demo-sizes: (
   'root': $root,
   'xlarge': $xlarge
@@ -855,7 +855,7 @@ which defaults to the map-variable name.
 That key will be used to access the data from JSON,
 so it doesn’t matter what key is used,
 as long as the key given here matches the group-name
-used when adding this data to <code>$herman</code>.</p>
+used when adding this data to <code>$pixu</code>.</p>
 </li>
 <li>
 <p>An optional <code>style</code> argument (in curly-brackets <code>{...}</code>),
@@ -1564,20 +1564,20 @@ each on their own line, for more visible<span class="widont">&nbsp;</span>space.
 
   
     <div data-item-section="prose" class="text-block">
-      <h2 id="add-ratio-size-data-to-herman">Add ratio/size data to<span class="widont">&nbsp;</span>$herman</h2>
+      <h2 id="add-ratio-size-data-to-pixu">Add ratio/size data to<span class="widont">&nbsp;</span>$pixu</h2>
 <p>In order to preview the <code>$demo-ratios</code> and <code>$demo-sizes</code> maps,
 we also need to <a href="api_json-export.html">export the data to<span class="widont">&nbsp;</span>JSON</a>.</p>
-<p>You can add data to the <code>$herman</code> export-map by hand,
-or use the provided <code>herman-add</code> mixin
+<p>You can add data to the <code>$pixu</code> export-map by hand,
+or use the provided <code>pixu-add</code> mixin
 to combine existing maps into the proper structure.
 <a href="api_json-export.html#sizes-ratios">See the size/ratio map documentation for details<span class="widont">&nbsp;</span>»</a></p>
-<pre><code class="lang-scss"> @include herman-add('ratios', 'demo-ratios', $demo-ratios);
- @include herman-add('sizes', 'demo-sizes', $demo-sizes);
+<pre><code class="lang-scss"> @include pixu-add('ratios', 'demo-ratios', $demo-ratios);
+ @include pixu-add('sizes', 'demo-sizes', $demo-sizes);
 </code></pre>
 <p>If your map needs to be parsed or compiled before export,
-you can pass additional compilation functions and arguments to <code>herman-add</code>.
-Once your data is all stored in the <code>$herman</code> map,
-it can be converted to JSON using <code>herman-export</code>.</p>
+you can pass additional compilation functions and arguments to <code>pixu-add</code>.
+Once your data is all stored in the <code>$pixu</code> map,
+it can be converted to JSON using <code>pixu-export</code>.</p>
 
       
   
@@ -1655,7 +1655,7 @@ it can be converted to JSON using <code>herman-export</code>.</p>
       
       
         <a href="
-  api_json-export.html#variable--herman" class="item-name">$herman</a>
+  api_json-export.html#variable--pixu" class="item-name">$pixu</a>
       
       
       
@@ -1680,7 +1680,7 @@ it can be converted to JSON using <code>herman-export</code>.</p>
       <span class="item-type">@mixin</span>
       
         <a href="
-  api_json-export.html#mixin--herman-add" class="item-name">herman-add()</a>
+  api_json-export.html#mixin--pixu-add" class="item-name">pixu-add()</a>
       
       
       
@@ -1705,7 +1705,7 @@ it can be converted to JSON using <code>herman-export</code>.</p>
       <span class="item-type">@mixin</span>
       
         <a href="
-  api_json-export.html#mixin--herman-export" class="item-name">herman-export()</a>
+  api_json-export.html#mixin--pixu-export" class="item-name">pixu-export()</a>
       
       
       

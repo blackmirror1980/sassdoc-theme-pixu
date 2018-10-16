@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <title>Rendered Examples | Herman Documentation</title>
+  <title>Rendered Examples | Pixu Documentation</title>
 
   <link href="assets/img/favicon.ico" rel="shortcut icon">
   <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,600|Source+Sans+Pro:400,400i,700,700i" rel="stylesheet">
@@ -40,7 +40,7 @@
 
 
       <div class="project-title">
-        <a href="index.html" rel="home" class="project-name">Herman</a>
+        <a href="index.html" rel="home" class="project-name">Pixu</a>
         
           <span class="project-version">3.0.0</span>
         
@@ -57,7 +57,7 @@
     <div class="nav-subsection">
       <h3 class="nav-home">
         
-        <a href="index.html" data-nav="is-not-active">Herman</a>
+        <a href="index.html" data-nav="is-not-active">Pixu</a>
       </h3>
 
       
@@ -259,7 +259,7 @@
 
     
       <aside class="footer-credit">
-        <a href="http://oddbird.net/herman/" class="footer-icon">
+        <a href="http://oddbird.net/pixu/" class="footer-icon">
           
   <svg data-icon="logo" data-icon-size="footer-logo" ><use xlink:href="#icon-logo" />
   </svg>
@@ -267,8 +267,8 @@
         </a>
         <span>
           Documented with
-          <a href="http://oddbird.net/herman/" class="footer-link">
-            Herman
+          <a href="http://oddbird.net/pixu/" class="footer-link">
+            Pixu
           </a>
         </span>
         <span>
@@ -286,7 +286,7 @@
         
   <nav class="breadcrumb">
     
-    <a href="index.html" >Herman</a> »
+    <a href="index.html" >Pixu</a> »
     <strong>Rendered Examples</strong>
   </nav>
 
@@ -329,7 +329,7 @@ is identical to the original SassDoc feature.
 If you use the <code>@example</code> annotation
 with <code>scss</code>/<code>sass</code> (<a href="http://sass-lang.com/">Sass</a>)
 or <code>njk</code> (<a href="https://mozilla.github.io/nunjucks/">Nunjucks</a>) languages,
-Herman will display the source of the example,
+Pixu will display the source of the example,
 along with the compiled output
 (and rendered html, if using <code>njk</code> or <code>html</code> languages).
 Both Sass &amp; Nunjucks examples
@@ -466,7 +466,7 @@ with an API for supporting additional<span class="widont">&nbsp;</span>languages
     <div data-item-section="prose" class="text-block">
       <h2 id="compiling-sass-scss">Compiling Sass/Scss</h2>
 <p>Example annotations with language set to <code>sass</code> or <code>scss</code>
-will be compiled by Herman,
+will be compiled by Pixu,
 and display the output along with the<span class="widont">&nbsp;</span>source.</p>
 <p>Note that Sass/Scss examples require <code>node-sass</code>
 to be installed, if it isn’t already: <code>npm install node-sass</code>.</p>
@@ -474,9 +474,9 @@ to be installed, if it isn’t already: <code>npm install node-sass</code>.</p>
 with the ability to import Sass partials inside each example.
 In order for this to work with Sass/Scss,
 you must set an <code>includepaths</code> key
-in your sassdoc <code>herman.sass</code> configuration object –
+in your sassdoc <code>pixu.sass</code> configuration object –
 an array of places to look for Sass<span class="widont">&nbsp;</span>includes:</p>
-<pre><code class="lang-yaml">herman:
+<pre><code class="lang-yaml">pixu:
   sass:
     includepaths:
       - 'static/sass'
@@ -486,7 +486,7 @@ an array of places to look for Sass<span class="widont">&nbsp;</span>includes:</
 (relative to any <code>includepaths</code>)
 to include for all Sass<span class="widont">&nbsp;</span>examples:</p>
 <pre><code class="lang-yaml"># .sassdocrc (yaml)
-herman:
+pixu:
   sass:
     includepaths:
       - 'static/sass'
@@ -501,7 +501,7 @@ since all compiled output will be displayed with the <code>@example</code>.</p>
 (see the <a href="https://github.com/sass/node-sass/#outputstyle">node-sass</a> docs).
 You can override this with the <code>outputstyle</code> option:</p>
 <pre><code class="lang-yaml"># .sassdocrc (yaml)
-herman:
+pixu:
   sass:
     outputstyle: 'compressed'
 </code></pre>
@@ -670,10 +670,10 @@ or a <code>nunjucks.environment</code> (custom <a href="https://mozilla.github.i
 Using a custom environment
 is particularly useful if your macros contain custom filters.
 Either can be established
-in your sassdoc <code>herman</code> configuration object:</p>
+in your sassdoc <code>pixu</code> configuration object:</p>
 <h3 id="setting-nunjucks-templatepath-">Setting <code>nunjucks.templatepath</code>:</h3>
 <pre><code class="lang-yaml"># .sassdocrc (yaml)
-herman:
+pixu:
   nunjucks:
     templatepath: 'templates'
 </code></pre>
@@ -686,8 +686,8 @@ const sassdoc = require('sassdoc');
 const nunjucksEnv = nunjucks.configure('./templates');
 
 sassdoc(src, {
-  theme: 'herman',
-  herman: {
+  theme: 'pixu',
+  pixu: {
     nunjucks: {
       environment: nunjucksEnv
     }
