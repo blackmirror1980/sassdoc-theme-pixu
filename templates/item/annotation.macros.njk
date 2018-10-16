@@ -4,6 +4,53 @@
 
 {# Parameter list template #}
 {% macro param_list(name=none, url=none, item_type=none, value=none, value_type=none, note=none, description=none) %}
+  <div class="param-list">
+    <h4 class="param-title">
+      {% if item_type and (item_type != '') -%}
+        <span class="item-type">{{ item_type }}</span>
+      {%- endif %}
+      {% if name %}
+        {{ utility.link_if(
+          content=name,
+          url=url,
+          attrs={'class': 'item-name'}
+          ) }}
+      {% endif %}
+      {% if value -%}
+        <span class="item-value">{{ value }}</span>
+      {%- endif %}
+      {% if value_type -%}
+        <span class="value-type">({{ value_type }})</span>
+      {%- endif %}
+      {% if note -%}
+        <span class="item-note">[{{ note }}]</span>
+      {%- endif %}
+    </h4>
+
+    {% if description %}
+      {% set description = ['<p>', description, '</p>']|join if not ('</' in description) else description %}
+      <div class="param-details text-block">
+        {{ description|safe }}
+      </div>
+    {% endif %}
+  </div>
+{% endmacro %}
+
+{# @param & @prop items #}
+{% macro param(name, item, type) %}
+  {% set name = ['$', item.name, ':']|join if (type == 'parameter') else item.name %}
+  {% set name = [item.name, ':']|join if (type == 'property') else name %}
+
+  {{ param_list(
+    name=name,
+    value=item.default,
+    value_type=item.type,
+    description=item.description
+    ) }}
+{% endmacro %}
+
+{# Parameter list template #}
+{% macro param_list_table(name=none, url=none, item_type=none, value=none, value_type=none, note=none, description=none) %}
   <tr class="param-row" style="border-bottom: 1px solid lightgray; font-size: 16px; line-height: 30px;">
     <td class="param-name" style="text-align: left; width: 200px;">{{ item_type }}&nbsp;{{ name }}</td>
     <td class="param-value" style="text-align: left; width: 200px; color: #aa0e5c;">{{ value }}</td>
@@ -19,6 +66,19 @@
       {% endif %}
     </td>
   </tr>
+{% endmacro %}
+
+{# @param & @prop items #}
+{% macro param_table(name, item, type) %}
+  {% set name = ['$', item.name, ':']|join if (type == 'parameter') else item.name %}
+  {% set name = [item.name, ':']|join if (type == 'property') else name %}
+
+  {{ param_list_table(
+    name=name,
+    value=item.default,
+    value_type=item.type,
+    description=item.description
+    ) }}
 {% endmacro %}
 
 
@@ -43,7 +103,7 @@
         </thead>
         <tbody>
           {% for item in data %}
-            {{ param(name, item, type) }}
+            {{ param_table(name, item, type) }}
           {% endfor %}
         </tbody>
       </table>
@@ -55,21 +115,6 @@
     {% endcall %}
   {% endif %}
 {% endmacro %}
-
-
-{# @param & @prop items #}
-{% macro param(name, item, type) %}
-  {% set name = ['$', item.name, ':']|join if (type == 'parameter') else item.name %}
-  {% set name = [item.name, ':']|join if (type == 'property') else name %}
-
-  {{ param_list(
-    name=name,
-    value=item.default,
-    value_type=item.type,
-    description=item.description
-    ) }}
-{% endmacro %}
-
 
 {# @return annotation #}
 {% macro return(data) %}
@@ -275,3 +320,4 @@
     {% endcall %}
   {% endif %}
 {% endmacro %}
+
