@@ -70,7 +70,9 @@
 }
 
 .param-list {
+  border-collapse: collapse;
   margin-bottom: size('shim');
+  width: 100%;
 }
 
 .param-type {
