@@ -51,9 +51,16 @@
 
 {# Parameter list template #}
 {% macro param_list_table(name=none, url=none, item_type=none, value=none, value_type=none, note=none, description=none) %}
-  <tr class="param-row" style="border-bottom: 1px solid lightgray; font-size: 16px; line-height: 30px;">
+  <tr class="param-row" style="border-bottom: 1px solid lightgray; font-size: 16px; line-height: 45px;">
     <td class="param-name" style="text-align: left; width: 250px;">{{ item_type }}&nbsp;{{ name }}</td>
-    <td class="param-value" style="text-align: left; width: 250px; color: #aa0e5c;">{{ value | safe }}</td>
+    <td class="param-value" style="text-align: left; width: 350px;">
+      {% if value_type == 'color' -%}
+        <span class="color-container" style="border: 1px solid rgb(50, 50, 50); border-radius: 5px; background-color: {{value}}; padding: 0 5px; line-height: 20px; height: 20px; width: 100px; display: inline-block; vertical-align: middle;"></span>
+      {% elif value_type == 'color-gradient' %}
+        <span class="color-container" style="border: 1px solid rgb(50, 50, 50); border-radius: 5px; background-image: linear-gradient({{value}}); padding: 0 5px; line-height: 20px; height: 20px; width: 100px; display: inline-block; vertical-align: middle;"></span>
+      {%- endif %}
+      <span style="color: #aa0e5c;">{{ value | safe }}</span>
+    </td>
     <td class="param-value-type" style="text-align: left; width: 200px; color: #aa0e5c;">({{ value_type }})</td>
     <td class="param-description" style="text-align: left;">
       {% if note %}
@@ -96,7 +103,7 @@
         <thead>
           <tr class="param-row" style="text-align: left; border-bottom: 1px solid lightgray; color: lightgray; font-size: 14px; line-height: 30px;">
             <th class="param-name" style="text-align: left; width: 250px;">Type/Name</th>
-            <th class="param-value" style="text-align: left; width: 250px;">Value/Default Value</th>
+            <th class="param-value" style="text-align: left; width: 350px;">Value/Default Value</th>
             <th class="param-value-type" style="text-align: left; width: 200px;">Type</th>
             <th class="param-description" style="text-align: left;">Note/Description</th>
           </tr>
@@ -107,7 +114,7 @@
           {% endfor %}
         </tbody>
       </table>
-      
+
       {{ content(content_data) }}
       {{ return(return_data) }}
       {{ output(output_data) }}
