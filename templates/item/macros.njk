@@ -140,11 +140,15 @@
 
 
 {% macro source(item, type) %}
-  {%- if not ((type == 'mixin') or (type == 'function')) -%}
-    {% set code = scss_variable(item) if (type == 'variable') else none %}
-    {% set code = scss_css(item) if (type == 'css') else code %}
-    {{ utility.code_block(language='scss', content=code|escape|safe) }}
-  {%- endif -%}
+  <div class="code-block-wrapper">
+    {% if ((type == 'mixin') or (type == 'function')) %}
+      {{ utility.code_block(language='scss', content=scss_function_or_mixin(item)|escape|safe) }}
+    {% elif (type == 'variable') %}
+      {{ utility.code_block(language='scss', content=scss_variable(item)|escape|safe) }}
+    {% elif (type == 'css') %}
+      {{ utility.code_block(language='scss', content=scss_css(item)|escape|safe) }}
+    {% endif %}
+  </div>
 {% endmacro %}
 
 
@@ -201,6 +205,10 @@
   {% endif %}
 {% endmacro %}
 
+
+{% macro scss_function_or_mixin(item) -%}
+@{{ item.context.type }} {{ item.context.name }}({{ parameters_string }}) { {{ item.context.code }} };
+{%- endmacro %}
 
 {% macro scss_variable(item) -%}
 ${{ item.context.origName or item.context.name }}: {{ item.context.value }}{% if item.context.scope != 'private' %} !{{ item.context.scope }}{% endif %};
