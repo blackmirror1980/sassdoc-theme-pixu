@@ -42,7 +42,7 @@
       <div class="project-title">
         <a href="index.html" rel="home" class="project-name">Pixu</a>
         
-          <span class="project-version">3.0.0</span>
+          <span class="project-version">3.1.7</span>
         
       </div>
     </header>
@@ -413,6 +413,56 @@
 
 
     
+  <div class="code-block-wrapper">
+    
+      
+  
+    <div class="code-block">
+      
+        <div class="code-header">
+          <span class="code-language">
+            scss
+          </span>
+
+          
+        </div>
+      
+
+      
+      
+      <pre class="hljs-pre"><code class="lang-scss">@mixin banner-arrow() { 
+  border-bottom: size(&#39;arrow-border&#39;) solid color($color);
+  box-shadow: 0 2px 2px color(&#39;shadow&#39;);
+  display: block;
+  position: relative;
+  width: 100%;
+
+  @include wrap-content(&#39;&#39;) {
+    border: size(&#39;arrow-depth&#39;) solid transparent;
+    border-top-color: color($color);
+    border-width: size(&#39;arrow-depth&#39;) size(&#39;arrow-side&#39;) 0;
+    left: 50%;
+    position: absolute;
+    top: 100%;
+    transition: border-width 200ms;
+  }
+
+  @include before(&#39;&#39;) {
+    margin-top: size(&#39;arrow-border&#39;);
+    transform: translateX(-50%) translateY(-2px);
+  }
+
+  @include after(&#39;&#39;) {
+    border-top-color: color($background);
+    transform: translateX(-50%) translateY(-4px);
+  }
+ };</code></pre>
+    </div>
+  
+
+    
+  </div>
+
     
   
   
@@ -458,62 +508,84 @@ for use as a divider between the banner and main<span class="widont">&nbsp;</spa
     
 
     
-      
+      <table class="param-list" style="width: 100%; border-collapse: collapse;">
+        <thead>
+          <tr class="param-row" style="text-align: left; border-bottom: 1px solid lightgray; color: lightgray; font-size: 14px; line-height: 30px;">
+            <th class="param-name" style="text-align: left; width: 250px;">Type/Name</th>
+            <th class="param-value" style="text-align: left; width: 350px;">Value/Default Value</th>
+            <th class="param-value-type" style="text-align: left; width: 200px;">Type</th>
+            <th class="param-description" style="text-align: left;">Note/Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+            
+  
+  
+
+  
+  <tr class="param-row" style="border-bottom: 1px solid lightgray; font-size: 16px; line-height: 25px;">
+    <td class="param-name" style="text-align: left; width: 250px;">
+      <div style="display: inline-block; padding: 10px 0;">&nbsp;$color</div>
+    </td>
+    <td class="param-value" style="text-align: left; width: 350px;">
+      <div style="display: inline-block; padding: 10px 0;">
         
-  
-  
-
-  
-  <div class="param-list">
-    <h4 class="param-title">
-      
-      
-        <span class="item-name">$color:</span>
-      
-      <span class="item-value">&#39;theme-dark&#39;</span>
-      <span class="value-type">(color |<span class="widont">&nbsp;</span>string)</span>
-      
-    </h4>
-
-    
-      
-      <div class="param-details text-block">
-        <p>The color of the border/arrow<span class="widont">&nbsp;</span>line</p>
-
+        <span style="color: #aa0e5c;">'theme-dark'</span>
       </div>
-    
-  </div>
-
-
-      
+    </td>
+    <td class="param-value-type" style="text-align: left; width: 200px; color: #aa0e5c;">
+      <div style="display: inline-block; padding: 10px 0;">(color | string)</div>
+    </td>
+    <td class="param-description" style="text-align: left;">
+      <div style="display: inline-block; padding: 10px 0;">
         
+        
+          
+            <p>The color of the border/arrow<span class="widont">&nbsp;</span>line</p>
+
+        
+      </div>
+    </td>
+  </tr>
+
+
+          
+            
   
   
 
   
-  <div class="param-list">
-    <h4 class="param-title">
-      
-      
-        <span class="item-name">$background:</span>
-      
-      <span class="item-value">&#39;background&#39;</span>
-      <span class="value-type">(color |<span class="widont">&nbsp;</span>string)</span>
-      
-    </h4>
-
-    
-      
-      <div class="param-details text-block">
-        <p>The background color above the border/arrow,
+  <tr class="param-row" style="border-bottom: 1px solid lightgray; font-size: 16px; line-height: 25px;">
+    <td class="param-name" style="text-align: left; width: 250px;">
+      <div style="display: inline-block; padding: 10px 0;">&nbsp;$background</div>
+    </td>
+    <td class="param-value" style="text-align: left; width: 350px;">
+      <div style="display: inline-block; padding: 10px 0;">
+        
+        <span style="color: #aa0e5c;">'background'</span>
+      </div>
+    </td>
+    <td class="param-value-type" style="text-align: left; width: 200px; color: #aa0e5c;">
+      <div style="display: inline-block; padding: 10px 0;">(color | string)</div>
+    </td>
+    <td class="param-description" style="text-align: left;">
+      <div style="display: inline-block; padding: 10px 0;">
+        
+        
+          
+            <p>The background color above the border/arrow,
 used to make it an arrow-outline rather than a solid<span class="widont">&nbsp;</span>triangle</p>
 
+        
       </div>
-    
-  </div>
+    </td>
+  </tr>
 
 
-      
+          
+        </tbody>
+      </table>
 
       
   
@@ -793,8 +865,9 @@ used to make it an arrow-outline rather than a solid<span class="widont">&nbsp;<
 
 
     
+  <div class="code-block-wrapper">
     
-    
+      
   
     <div class="code-block">
       
@@ -818,6 +891,9 @@ used to make it an arrow-outline rather than a solid<span class="widont">&nbsp;<
 }</code></pre>
     </div>
   
+
+    
+  </div>
 
     
   
@@ -1068,8 +1144,9 @@ used to make it an arrow-outline rather than a solid<span class="widont">&nbsp;<
 
 
     
+  <div class="code-block-wrapper">
     
-    
+      
   
     <div class="code-block">
       
@@ -1092,6 +1169,9 @@ used to make it an arrow-outline rather than a solid<span class="widont">&nbsp;<
 }</code></pre>
     </div>
   
+
+    
+  </div>
 
     
   
@@ -1298,8 +1378,9 @@ including both the name and version of the<span class="widont">&nbsp;</span>proj
 
 
     
+  <div class="code-block-wrapper">
     
-    
+      
   
     <div class="code-block">
       
@@ -1326,6 +1407,9 @@ including both the name and version of the<span class="widont">&nbsp;</span>proj
 }</code></pre>
     </div>
   
+
+    
+  </div>
 
     
   
@@ -1525,8 +1609,9 @@ including both the name and version of the<span class="widont">&nbsp;</span>proj
 
 
     
+  <div class="code-block-wrapper">
     
-    
+      
   
     <div class="code-block">
       
@@ -1548,6 +1633,9 @@ including both the name and version of the<span class="widont">&nbsp;</span>proj
 }</code></pre>
     </div>
   
+
+    
+  </div>
 
     
   
@@ -1747,8 +1835,9 @@ including both the name and version of the<span class="widont">&nbsp;</span>proj
 
 
     
+  <div class="code-block-wrapper">
     
-    
+      
   
     <div class="code-block">
       
@@ -1784,6 +1873,9 @@ including both the name and version of the<span class="widont">&nbsp;</span>proj
 }</code></pre>
     </div>
   
+
+    
+  </div>
 
     
   

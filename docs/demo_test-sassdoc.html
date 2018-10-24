@@ -42,7 +42,7 @@
       <div class="project-title">
         <a href="index.html" rel="home" class="project-name">Pixu</a>
         
-          <span class="project-version">3.0.0</span>
+          <span class="project-version">3.1.7</span>
         
       </div>
     </header>
@@ -432,6 +432,36 @@ so you can see what they look like in<span class="widont">&nbsp;</span>Pixu.</p>
 
 
     
+  <div class="code-block-wrapper">
+    
+      
+  
+    <div class="code-block">
+      
+        <div class="code-header">
+          <span class="code-language">
+            scss
+          </span>
+
+          
+        </div>
+      
+
+      
+      
+      <pre class="hljs-pre"><code class="lang-scss">@function pixu-sample() { 
+  @if (not $one) or (not $two) or (not $three) {
+    @error &#39;Please provide values for all three parameters&#39;;
+  }
+
+  @return $one $two $three;
+ };</code></pre>
+    </div>
+  
+
+    
+  </div>
+
     
   
   
@@ -509,88 +539,115 @@ ferrove finis longave, pignus duros<span class="widont">&nbsp;</span>nubifer!</p
     
 
     
-      
+      <table class="param-list" style="width: 100%; border-collapse: collapse;">
+        <thead>
+          <tr class="param-row" style="text-align: left; border-bottom: 1px solid lightgray; color: lightgray; font-size: 14px; line-height: 30px;">
+            <th class="param-name" style="text-align: left; width: 250px;">Type/Name</th>
+            <th class="param-value" style="text-align: left; width: 350px;">Value/Default Value</th>
+            <th class="param-value-type" style="text-align: left; width: 200px;">Type</th>
+            <th class="param-description" style="text-align: left;">Note/Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+            
+  
+  
+
+  
+  <tr class="param-row" style="border-bottom: 1px solid lightgray; font-size: 16px; line-height: 25px;">
+    <td class="param-name" style="text-align: left; width: 250px;">
+      <div style="display: inline-block; padding: 10px 0;">&nbsp;$one</div>
+    </td>
+    <td class="param-value" style="text-align: left; width: 350px;">
+      <div style="display: inline-block; padding: 10px 0;">
         
-  
-  
-
-  
-  <div class="param-list">
-    <h4 class="param-title">
-      
-      
-        <span class="item-name">$one:</span>
-      
-      
-      <span class="value-type">(number)</span>
-      
-    </h4>
-
-    
-      
-      <div class="param-details text-block">
-        <p>The first parameter is required, because no default is<span class="widont">&nbsp;</span>given</p>
-
+        <span style="color: #aa0e5c;"></span>
       </div>
-    
-  </div>
-
-
-      
+    </td>
+    <td class="param-value-type" style="text-align: left; width: 200px; color: #aa0e5c;">
+      <div style="display: inline-block; padding: 10px 0;">(number)</div>
+    </td>
+    <td class="param-description" style="text-align: left;">
+      <div style="display: inline-block; padding: 10px 0;">
         
-  
-  
-
-  
-  <div class="param-list">
-    <h4 class="param-title">
-      
-      
-        <span class="item-name">$two:</span>
-      
-      <span class="item-value">$one</span>
-      <span class="value-type">(number)</span>
-      
-    </h4>
-
-    
-      
-      <div class="param-details text-block">
-        <p>Our second parameter defaults to the value of our first<span class="widont">&nbsp;</span>one</p>
-
-      </div>
-    
-  </div>
-
-
-      
         
-  
-  
+          
+            <p>The first parameter is required, because no default is<span class="widont">&nbsp;</span>given</p>
 
-  
-  <div class="param-list">
-    <h4 class="param-title">
-      
-      
-        <span class="item-name">$three:</span>
-      
-      <span class="item-value">&#39;three&#39;</span>
-      <span class="value-type">(string)</span>
-      
-    </h4>
-
-    
-      
-      <div class="param-details text-block">
-        <p>Looks like this one takes a string<span class="widont">&nbsp;</span>instead</p>
-
+        
       </div>
-    
-  </div>
+    </td>
+  </tr>
 
 
-      
+          
+            
+  
+  
+
+  
+  <tr class="param-row" style="border-bottom: 1px solid lightgray; font-size: 16px; line-height: 25px;">
+    <td class="param-name" style="text-align: left; width: 250px;">
+      <div style="display: inline-block; padding: 10px 0;">&nbsp;$two</div>
+    </td>
+    <td class="param-value" style="text-align: left; width: 350px;">
+      <div style="display: inline-block; padding: 10px 0;">
+        
+        <span style="color: #aa0e5c;">$one</span>
+      </div>
+    </td>
+    <td class="param-value-type" style="text-align: left; width: 200px; color: #aa0e5c;">
+      <div style="display: inline-block; padding: 10px 0;">(number)</div>
+    </td>
+    <td class="param-description" style="text-align: left;">
+      <div style="display: inline-block; padding: 10px 0;">
+        
+        
+          
+            <p>Our second parameter defaults to the value of our first<span class="widont">&nbsp;</span>one</p>
+
+        
+      </div>
+    </td>
+  </tr>
+
+
+          
+            
+  
+  
+
+  
+  <tr class="param-row" style="border-bottom: 1px solid lightgray; font-size: 16px; line-height: 25px;">
+    <td class="param-name" style="text-align: left; width: 250px;">
+      <div style="display: inline-block; padding: 10px 0;">&nbsp;$three</div>
+    </td>
+    <td class="param-value" style="text-align: left; width: 350px;">
+      <div style="display: inline-block; padding: 10px 0;">
+        
+        <span style="color: #aa0e5c;">'three'</span>
+      </div>
+    </td>
+    <td class="param-value-type" style="text-align: left; width: 200px; color: #aa0e5c;">
+      <div style="display: inline-block; padding: 10px 0;">(string)</div>
+    </td>
+    <td class="param-description" style="text-align: left;">
+      <div style="display: inline-block; padding: 10px 0;">
+        
+        
+          
+            <p>Looks like this one takes a string<span class="widont">&nbsp;</span>instead</p>
+
+        
+      </div>
+    </td>
+  </tr>
+
+
+          
+        </tbody>
+      </table>
 
       
   
@@ -992,6 +1049,32 @@ ferrove finis longave, pignus duros<span class="widont">&nbsp;</span>nubifer!</p
 
 
     
+  <div class="code-block-wrapper">
+    
+      
+  
+    <div class="code-block">
+      
+        <div class="code-header">
+          <span class="code-language">
+            scss
+          </span>
+
+          
+        </div>
+      
+
+      
+      
+      <pre class="hljs-pre"><code class="lang-scss">@function sample-alias() { 
+  @return pixu-sample($one, $two, $three);
+ };</code></pre>
+    </div>
+  
+
+    
+  </div>
+
     
   
   
@@ -1170,6 +1253,32 @@ ferrove finis longave, pignus duros<span class="widont">&nbsp;</span>nubifer!</p
 
 
     
+  <div class="code-block-wrapper">
+    
+      
+  
+    <div class="code-block">
+      
+        <div class="code-header">
+          <span class="code-language">
+            scss
+          </span>
+
+          
+        </div>
+      
+
+      
+      
+      <pre class="hljs-pre"><code class="lang-scss">@function sample-alias-two() { 
+  @return pixu-sample($one, $two, $three);
+ };</code></pre>
+    </div>
+  
+
+    
+  </div>
+
     
   
   
@@ -1534,6 +1643,35 @@ it is separated from documented code by one or more<span class="widont">&nbsp;</
 
 
     
+  <div class="code-block-wrapper">
+    
+      
+  
+    <div class="code-block">
+      
+        <div class="code-header">
+          <span class="code-language">
+            scss
+          </span>
+
+          
+        </div>
+      
+
+      
+      
+      <pre class="hljs-pre"><code class="lang-scss">@mixin before-sample() { 
+  &amp;::before {
+    content: $content;
+    @content;
+  }
+ };</code></pre>
+    </div>
+  
+
+    
+  </div>
+
     
   
   
@@ -1580,61 +1718,83 @@ a generated element <code>:before</code> the element it is used<span class="wido
     
 
     
-      
+      <table class="param-list" style="width: 100%; border-collapse: collapse;">
+        <thead>
+          <tr class="param-row" style="text-align: left; border-bottom: 1px solid lightgray; color: lightgray; font-size: 14px; line-height: 30px;">
+            <th class="param-name" style="text-align: left; width: 250px;">Type/Name</th>
+            <th class="param-value" style="text-align: left; width: 350px;">Value/Default Value</th>
+            <th class="param-value-type" style="text-align: left; width: 200px;">Type</th>
+            <th class="param-description" style="text-align: left;">Note/Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+            
+  
+  
+
+  
+  <tr class="param-row" style="border-bottom: 1px solid lightgray; font-size: 16px; line-height: 25px;">
+    <td class="param-name" style="text-align: left; width: 250px;">
+      <div style="display: inline-block; padding: 10px 0;">&nbsp;$content</div>
+    </td>
+    <td class="param-value" style="text-align: left; width: 350px;">
+      <div style="display: inline-block; padding: 10px 0;">
         
-  
-  
-
-  
-  <div class="param-list">
-    <h4 class="param-title">
-      
-      
-        <span class="item-name">$content:</span>
-      
-      
-      <span class="value-type">(String)</span>
-      
-    </h4>
-
-    
-      
-      <div class="param-details text-block">
-        <p>A value for the <code>content</code> property</p>
-
+        <span style="color: #aa0e5c;"></span>
       </div>
-    
-  </div>
-
-
-      
+    </td>
+    <td class="param-value-type" style="text-align: left; width: 200px; color: #aa0e5c;">
+      <div style="display: inline-block; padding: 10px 0;">(String)</div>
+    </td>
+    <td class="param-description" style="text-align: left;">
+      <div style="display: inline-block; padding: 10px 0;">
         
-  
-  
+        
+          
+            <p>A value for the <code>content</code> property</p>
 
-  
-  <div class="param-list">
-    <h4 class="param-title">
-      
-      
-        <span class="item-name">$list…:</span>
-      
-      
-      <span class="value-type">(arglist)</span>
-      
-    </h4>
-
-    
-      
-      <div class="param-details text-block">
-        <p>Sass also allows<span class="widont">&nbsp;</span>arglists!</p>
-
+        
       </div>
-    
-  </div>
+    </td>
+  </tr>
 
 
-      
+          
+            
+  
+  
+
+  
+  <tr class="param-row" style="border-bottom: 1px solid lightgray; font-size: 16px; line-height: 25px;">
+    <td class="param-name" style="text-align: left; width: 250px;">
+      <div style="display: inline-block; padding: 10px 0;">&nbsp;$list…</div>
+    </td>
+    <td class="param-value" style="text-align: left; width: 350px;">
+      <div style="display: inline-block; padding: 10px 0;">
+        
+        <span style="color: #aa0e5c;"></span>
+      </div>
+    </td>
+    <td class="param-value-type" style="text-align: left; width: 200px; color: #aa0e5c;">
+      <div style="display: inline-block; padding: 10px 0;">(arglist)</div>
+    </td>
+    <td class="param-description" style="text-align: left;">
+      <div style="display: inline-block; padding: 10px 0;">
+        
+        
+          
+            <p>Sass also allows<span class="widont">&nbsp;</span>arglists!</p>
+
+        
+      </div>
+    </td>
+  </tr>
+
+
+          
+        </tbody>
+      </table>
 
       
   
@@ -1857,8 +2017,9 @@ and any passed-in styled<span class="widont">&nbsp;</span>applied.</p>
 
 
     
+  <div class="code-block-wrapper">
     
-    
+      
   
     <div class="code-block">
       
@@ -1876,6 +2037,9 @@ and any passed-in styled<span class="widont">&nbsp;</span>applied.</p>
       <pre class="hljs-pre"><code class="lang-scss">$private: &#39;for internal use only&#39;;</code></pre>
     </div>
   
+
+    
+  </div>
 
     
   
@@ -2064,8 +2228,9 @@ in your <a href="http://sassdoc.com/configuration/">SassDoc<span class="widont">
 
 
     
+  <div class="code-block-wrapper">
     
-    
+      
   
     <div class="code-block">
       
@@ -2083,6 +2248,9 @@ in your <a href="http://sassdoc.com/configuration/">SassDoc<span class="widont">
       <pre class="hljs-pre"><code class="lang-scss">$basic-value: if(not &#39;social&#39;, $private, &#39;hello world&#39;);</code></pre>
     </div>
   
+
+    
+  </div>
 
     
   
@@ -2292,8 +2460,9 @@ in your <a href="http://sassdoc.com/configuration/">SassDoc<span class="widont">
 
 
     
+  <div class="code-block-wrapper">
     
-    
+      
   
     <div class="code-block">
       
@@ -2314,6 +2483,9 @@ in your <a href="http://sassdoc.com/configuration/">SassDoc<span class="widont">
 );</code></pre>
     </div>
   
+
+    
+  </div>
 
     
   
@@ -2353,67 +2525,89 @@ in your <a href="http://sassdoc.com/configuration/">SassDoc<span class="widont">
   <div data-item-section="property">
     
       <h3 class="item-subtitle">
-        <span class="item-subtitle-main">Map Properties</span>
+        <span class="item-subtitle-main">Properties</span>
         
       </h3>
     
 
     
-      
+      <table class="param-list" style="width: 100%; border-collapse: collapse;">
+        <thead>
+          <tr class="param-row" style="text-align: left; border-bottom: 1px solid lightgray; color: lightgray; font-size: 14px; line-height: 30px;">
+            <th class="param-name" style="text-align: left; width: 250px;">Type/Name</th>
+            <th class="param-value" style="text-align: left; width: 350px;">Value/Default Value</th>
+            <th class="param-value-type" style="text-align: left; width: 200px;">Type</th>
+            <th class="param-description" style="text-align: left;">Note/Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+            
+  
+  
+
+  
+  <tr class="param-row" style="border-bottom: 1px solid lightgray; font-size: 16px; line-height: 25px;">
+    <td class="param-name" style="text-align: left; width: 250px;">
+      <div style="display: inline-block; padding: 10px 0;">&nbsp;&#39;morning&#39;</div>
+    </td>
+    <td class="param-value" style="text-align: left; width: 350px;">
+      <div style="display: inline-block; padding: 10px 0;">
         
-  
-  
-
-  
-  <div class="param-list">
-    <h4 class="param-title">
-      
-      
-        <span class="item-name">&#39;morning&#39;:</span>
-      
-      <span class="item-value">$basic-value</span>
-      <span class="value-type">(string)</span>
-      
-    </h4>
-
-    
-      
-      <div class="param-details text-block">
-        <p>What to say in the morning when you get<span class="widont">&nbsp;</span>up</p>
-
+        <span style="color: #aa0e5c;">$basic-value</span>
       </div>
-    
-  </div>
-
-
-      
+    </td>
+    <td class="param-value-type" style="text-align: left; width: 200px; color: #aa0e5c;">
+      <div style="display: inline-block; padding: 10px 0;">(string)</div>
+    </td>
+    <td class="param-description" style="text-align: left;">
+      <div style="display: inline-block; padding: 10px 0;">
         
-  
-  
+        
+          
+            <p>What to say in the morning when you get<span class="widont">&nbsp;</span>up</p>
 
-  
-  <div class="param-list">
-    <h4 class="param-title">
-      
-      
-        <span class="item-name">&#39;evening&#39;:</span>
-      
-      <span class="item-value">$private</span>
-      <span class="value-type">(string)</span>
-      
-    </h4>
-
-    
-      
-      <div class="param-details text-block">
-        <p>What to say in the evening before<span class="widont">&nbsp;</span>bed</p>
-
+        
       </div>
-    
-  </div>
+    </td>
+  </tr>
 
 
-      
+          
+            
+  
+  
+
+  
+  <tr class="param-row" style="border-bottom: 1px solid lightgray; font-size: 16px; line-height: 25px;">
+    <td class="param-name" style="text-align: left; width: 250px;">
+      <div style="display: inline-block; padding: 10px 0;">&nbsp;&#39;evening&#39;</div>
+    </td>
+    <td class="param-value" style="text-align: left; width: 350px;">
+      <div style="display: inline-block; padding: 10px 0;">
+        
+        <span style="color: #aa0e5c;">$private</span>
+      </div>
+    </td>
+    <td class="param-value-type" style="text-align: left; width: 200px; color: #aa0e5c;">
+      <div style="display: inline-block; padding: 10px 0;">(string)</div>
+    </td>
+    <td class="param-description" style="text-align: left;">
+      <div style="display: inline-block; padding: 10px 0;">
+        
+        
+          
+            <p>What to say in the evening before<span class="widont">&nbsp;</span>bed</p>
+
+        
+      </div>
+    </td>
+  </tr>
+
+
+          
+        </tbody>
+      </table>
 
       
   

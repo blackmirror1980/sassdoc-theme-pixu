@@ -42,7 +42,7 @@
       <div class="project-title">
         <a href="index.html" rel="home" class="project-name">Pixu</a>
         
-          <span class="project-version">3.0.0</span>
+          <span class="project-version">3.1.7</span>
         
       </div>
     </header>
@@ -419,8 +419,9 @@ used by Pixu’s
 
 
     
+  <div class="code-block-wrapper">
     
-    
+      
   
     <div class="code-block">
       
@@ -443,6 +444,9 @@ used by Pixu’s
 );</code></pre>
     </div>
   
+
+    
+  </div>
 
     
   
@@ -601,6 +605,46 @@ so data is consistently stored with a plural access<span class="widont">&nbsp;</
 
 
     
+  <div class="code-block-wrapper">
+    
+      
+  
+    <div class="code-block">
+      
+        <div class="code-header">
+          <span class="code-language">
+            scss
+          </span>
+
+          
+        </div>
+      
+
+      
+      
+      <pre class="hljs-pre"><code class="lang-scss">@function _pixu-encode() { 
+  $type: type-of($value);
+
+  @if ($type == &#39;bool&#39;) {
+    @return $value;
+  } @else if ($type == &#39;null&#39;) {
+    @return &#39;null&#39;;
+  } @else if ($type == &#39;list&#39;) {
+    @return _pixu-encode-list($value);
+  } @else if ($type == &#39;map&#39;) {
+    @return _pixu-encode-map($value);
+  } @else if ($type == &#39;number&#39;) {
+    @return _pixu-encode-number($value);
+  }
+
+  @return _pixu-quote($value);
+ };</code></pre>
+    </div>
+  
+
+    
+  </div>
+
     
   
   
@@ -645,34 +689,51 @@ so data is consistently stored with a plural access<span class="widont">&nbsp;</
     
 
     
-      
+      <table class="param-list" style="width: 100%; border-collapse: collapse;">
+        <thead>
+          <tr class="param-row" style="text-align: left; border-bottom: 1px solid lightgray; color: lightgray; font-size: 14px; line-height: 30px;">
+            <th class="param-name" style="text-align: left; width: 250px;">Type/Name</th>
+            <th class="param-value" style="text-align: left; width: 350px;">Value/Default Value</th>
+            <th class="param-value-type" style="text-align: left; width: 200px;">Type</th>
+            <th class="param-description" style="text-align: left;">Note/Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+            
+  
+  
+
+  
+  <tr class="param-row" style="border-bottom: 1px solid lightgray; font-size: 16px; line-height: 25px;">
+    <td class="param-name" style="text-align: left; width: 250px;">
+      <div style="display: inline-block; padding: 10px 0;">&nbsp;$value</div>
+    </td>
+    <td class="param-value" style="text-align: left; width: 350px;">
+      <div style="display: inline-block; padding: 10px 0;">
         
-  
-  
-
-  
-  <div class="param-list">
-    <h4 class="param-title">
-      
-      
-        <span class="item-name">$value:</span>
-      
-      <span class="item-value">$pixu</span>
-      <span class="value-type">(*)</span>
-      
-    </h4>
-
-    
-      
-      <div class="param-details text-block">
-        <p>Data to be encoded for JSON<span class="widont">&nbsp;</span>exporting</p>
-
+        <span style="color: #aa0e5c;">$pixu</span>
       </div>
-    
-  </div>
+    </td>
+    <td class="param-value-type" style="text-align: left; width: 200px; color: #aa0e5c;">
+      <div style="display: inline-block; padding: 10px 0;">(*)</div>
+    </td>
+    <td class="param-description" style="text-align: left;">
+      <div style="display: inline-block; padding: 10px 0;">
+        
+        
+          
+            <p>Data to be encoded for JSON<span class="widont">&nbsp;</span>exporting</p>
+
+        
+      </div>
+    </td>
+  </tr>
 
 
-      
+          
+        </tbody>
+      </table>
 
       
   
@@ -1031,6 +1092,39 @@ so data is consistently stored with a plural access<span class="widont">&nbsp;</
 
 
     
+  <div class="code-block-wrapper">
+    
+      
+  
+    <div class="code-block">
+      
+        <div class="code-header">
+          <span class="code-language">
+            scss
+          </span>
+
+          
+        </div>
+      
+
+      
+      
+      <pre class="hljs-pre"><code class="lang-scss">@function _pixu-encode-list() { 
+  $str: &#39;&#39;;
+
+  @each $item in $list {
+    $str: if($str != &#39;&#39;, $str + &#39;, &#39;, $str);
+    $str: $str + _pixu-encode($item);
+  }
+
+  @return &#39;[#{$str}]&#39;;
+ };</code></pre>
+    </div>
+  
+
+    
+  </div>
+
     
   
   
@@ -1076,34 +1170,51 @@ and convert to a JSON-ready square-bracketed<span class="widont">&nbsp;</span>li
     
 
     
-      
+      <table class="param-list" style="width: 100%; border-collapse: collapse;">
+        <thead>
+          <tr class="param-row" style="text-align: left; border-bottom: 1px solid lightgray; color: lightgray; font-size: 14px; line-height: 30px;">
+            <th class="param-name" style="text-align: left; width: 250px;">Type/Name</th>
+            <th class="param-value" style="text-align: left; width: 350px;">Value/Default Value</th>
+            <th class="param-value-type" style="text-align: left; width: 200px;">Type</th>
+            <th class="param-description" style="text-align: left;">Note/Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+            
+  
+  
+
+  
+  <tr class="param-row" style="border-bottom: 1px solid lightgray; font-size: 16px; line-height: 25px;">
+    <td class="param-name" style="text-align: left; width: 250px;">
+      <div style="display: inline-block; padding: 10px 0;">&nbsp;$list</div>
+    </td>
+    <td class="param-value" style="text-align: left; width: 350px;">
+      <div style="display: inline-block; padding: 10px 0;">
         
-  
-  
-
-  
-  <div class="param-list">
-    <h4 class="param-title">
-      
-      
-        <span class="item-name">$list:</span>
-      
-      
-      <span class="value-type">(list)</span>
-      
-    </h4>
-
-    
-      
-      <div class="param-details text-block">
-        <p>List to be encoded for JSON<span class="widont">&nbsp;</span>exporting</p>
-
+        <span style="color: #aa0e5c;"></span>
       </div>
-    
-  </div>
+    </td>
+    <td class="param-value-type" style="text-align: left; width: 200px; color: #aa0e5c;">
+      <div style="display: inline-block; padding: 10px 0;">(list)</div>
+    </td>
+    <td class="param-description" style="text-align: left;">
+      <div style="display: inline-block; padding: 10px 0;">
+        
+        
+          
+            <p>List to be encoded for JSON<span class="widont">&nbsp;</span>exporting</p>
+
+        
+      </div>
+    </td>
+  </tr>
 
 
-      
+          
+        </tbody>
+      </table>
 
       
   
@@ -1295,6 +1406,39 @@ and convert to a JSON-ready square-bracketed<span class="widont">&nbsp;</span>li
 
 
     
+  <div class="code-block-wrapper">
+    
+      
+  
+    <div class="code-block">
+      
+        <div class="code-header">
+          <span class="code-language">
+            scss
+          </span>
+
+          
+        </div>
+      
+
+      
+      
+      <pre class="hljs-pre"><code class="lang-scss">@function _pixu-encode-map() { 
+  $str: &#39;&#39;;
+
+  @each $key, $value in $map {
+    $str: if($str != &#39;&#39;, $str + &#39;, &#39;, $str);
+    $str: $str + _pixu-quote($key) + &#39;: &#39; + _pixu-encode($value);
+  }
+
+  @return &#39;{#{$str}}&#39;;
+ };</code></pre>
+    </div>
+  
+
+    
+  </div>
+
     
   
   
@@ -1340,34 +1484,51 @@ and convert to a JSON-ready<span class="widont">&nbsp;</span>object.</p>
     
 
     
-      
+      <table class="param-list" style="width: 100%; border-collapse: collapse;">
+        <thead>
+          <tr class="param-row" style="text-align: left; border-bottom: 1px solid lightgray; color: lightgray; font-size: 14px; line-height: 30px;">
+            <th class="param-name" style="text-align: left; width: 250px;">Type/Name</th>
+            <th class="param-value" style="text-align: left; width: 350px;">Value/Default Value</th>
+            <th class="param-value-type" style="text-align: left; width: 200px;">Type</th>
+            <th class="param-description" style="text-align: left;">Note/Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+            
+  
+  
+
+  
+  <tr class="param-row" style="border-bottom: 1px solid lightgray; font-size: 16px; line-height: 25px;">
+    <td class="param-name" style="text-align: left; width: 250px;">
+      <div style="display: inline-block; padding: 10px 0;">&nbsp;$map</div>
+    </td>
+    <td class="param-value" style="text-align: left; width: 350px;">
+      <div style="display: inline-block; padding: 10px 0;">
         
-  
-  
-
-  
-  <div class="param-list">
-    <h4 class="param-title">
-      
-      
-        <span class="item-name">$map:</span>
-      
-      
-      <span class="value-type">(map)</span>
-      
-    </h4>
-
-    
-      
-      <div class="param-details text-block">
-        <p>Map to be encoded for JSON<span class="widont">&nbsp;</span>exporting</p>
-
+        <span style="color: #aa0e5c;"></span>
       </div>
-    
-  </div>
+    </td>
+    <td class="param-value-type" style="text-align: left; width: 200px; color: #aa0e5c;">
+      <div style="display: inline-block; padding: 10px 0;">(map)</div>
+    </td>
+    <td class="param-description" style="text-align: left;">
+      <div style="display: inline-block; padding: 10px 0;">
+        
+        
+          
+            <p>Map to be encoded for JSON<span class="widont">&nbsp;</span>exporting</p>
+
+        
+      </div>
+    </td>
+  </tr>
 
 
-      
+          
+        </tbody>
+      </table>
 
       
   
@@ -1594,6 +1755,36 @@ and convert to a JSON-ready<span class="widont">&nbsp;</span>object.</p>
 
 
     
+  <div class="code-block-wrapper">
+    
+      
+  
+    <div class="code-block">
+      
+        <div class="code-header">
+          <span class="code-language">
+            scss
+          </span>
+
+          
+        </div>
+      
+
+      
+      
+      <pre class="hljs-pre"><code class="lang-scss">@function _pixu-encode-number() { 
+  @if unitless($number) {
+    @return inspect($number);
+  }
+
+  @return _pixu-quote($number);
+ };</code></pre>
+    </div>
+  
+
+    
+  </div>
+
     
   
   
@@ -1639,34 +1830,51 @@ adding proof-quotes for length<span class="widont">&nbsp;</span>values.</p>
     
 
     
-      
+      <table class="param-list" style="width: 100%; border-collapse: collapse;">
+        <thead>
+          <tr class="param-row" style="text-align: left; border-bottom: 1px solid lightgray; color: lightgray; font-size: 14px; line-height: 30px;">
+            <th class="param-name" style="text-align: left; width: 250px;">Type/Name</th>
+            <th class="param-value" style="text-align: left; width: 350px;">Value/Default Value</th>
+            <th class="param-value-type" style="text-align: left; width: 200px;">Type</th>
+            <th class="param-description" style="text-align: left;">Note/Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+            
+  
+  
+
+  
+  <tr class="param-row" style="border-bottom: 1px solid lightgray; font-size: 16px; line-height: 25px;">
+    <td class="param-name" style="text-align: left; width: 250px;">
+      <div style="display: inline-block; padding: 10px 0;">&nbsp;$number</div>
+    </td>
+    <td class="param-value" style="text-align: left; width: 350px;">
+      <div style="display: inline-block; padding: 10px 0;">
         
-  
-  
-
-  
-  <div class="param-list">
-    <h4 class="param-title">
-      
-      
-        <span class="item-name">$number:</span>
-      
-      
-      <span class="value-type">(number)</span>
-      
-    </h4>
-
-    
-      
-      <div class="param-details text-block">
-        <p>Number to be encoded for JSON<span class="widont">&nbsp;</span>exporting</p>
-
+        <span style="color: #aa0e5c;"></span>
       </div>
-    
-  </div>
+    </td>
+    <td class="param-value-type" style="text-align: left; width: 200px; color: #aa0e5c;">
+      <div style="display: inline-block; padding: 10px 0;">(number)</div>
+    </td>
+    <td class="param-description" style="text-align: left;">
+      <div style="display: inline-block; padding: 10px 0;">
+        
+        
+          
+            <p>Number to be encoded for JSON<span class="widont">&nbsp;</span>exporting</p>
+
+        
+      </div>
+    </td>
+  </tr>
 
 
-      
+          
+        </tbody>
+      </table>
 
       
   
@@ -1858,6 +2066,35 @@ adding proof-quotes for length<span class="widont">&nbsp;</span>values.</p>
 
 
     
+  <div class="code-block-wrapper">
+    
+      
+  
+    <div class="code-block">
+      
+        <div class="code-header">
+          <span class="code-language">
+            scss
+          </span>
+
+          
+        </div>
+      
+
+      
+      
+      <pre class="hljs-pre"><code class="lang-scss">@function _pixu-quote() { 
+  $value: &#39;#{$value}&#39;;
+  $value: _pixu-escape-backslashes($value);
+  $value: _pixu-escape-quotes($value);
+  @return &#39;&quot;#{$value}&quot;&#39;;
+ };</code></pre>
+    </div>
+  
+
+    
+  </div>
+
     
   
   
@@ -1902,34 +2139,51 @@ adding proof-quotes for length<span class="widont">&nbsp;</span>values.</p>
     
 
     
-      
+      <table class="param-list" style="width: 100%; border-collapse: collapse;">
+        <thead>
+          <tr class="param-row" style="text-align: left; border-bottom: 1px solid lightgray; color: lightgray; font-size: 14px; line-height: 30px;">
+            <th class="param-name" style="text-align: left; width: 250px;">Type/Name</th>
+            <th class="param-value" style="text-align: left; width: 350px;">Value/Default Value</th>
+            <th class="param-value-type" style="text-align: left; width: 200px;">Type</th>
+            <th class="param-description" style="text-align: left;">Note/Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+            
+  
+  
+
+  
+  <tr class="param-row" style="border-bottom: 1px solid lightgray; font-size: 16px; line-height: 25px;">
+    <td class="param-name" style="text-align: left; width: 250px;">
+      <div style="display: inline-block; padding: 10px 0;">&nbsp;$value</div>
+    </td>
+    <td class="param-value" style="text-align: left; width: 350px;">
+      <div style="display: inline-block; padding: 10px 0;">
         
-  
-  
-
-  
-  <div class="param-list">
-    <h4 class="param-title">
-      
-      
-        <span class="item-name">$value:</span>
-      
-      
-      <span class="value-type">(*)</span>
-      
-    </h4>
-
-    
-      
-      <div class="param-details text-block">
-        <p>The value to inspect and<span class="widont">&nbsp;</span>quote.</p>
-
+        <span style="color: #aa0e5c;"></span>
       </div>
-    
-  </div>
+    </td>
+    <td class="param-value-type" style="text-align: left; width: 200px; color: #aa0e5c;">
+      <div style="display: inline-block; padding: 10px 0;">(*)</div>
+    </td>
+    <td class="param-description" style="text-align: left;">
+      <div style="display: inline-block; padding: 10px 0;">
+        
+        
+          
+            <p>The value to inspect and<span class="widont">&nbsp;</span>quote.</p>
+
+        
+      </div>
+    </td>
+  </tr>
 
 
-      
+          
+        </tbody>
+      </table>
 
       
   
@@ -2218,6 +2472,48 @@ adding proof-quotes for length<span class="widont">&nbsp;</span>values.</p>
 
 
     
+  <div class="code-block-wrapper">
+    
+      
+  
+    <div class="code-block">
+      
+        <div class="code-header">
+          <span class="code-language">
+            scss
+          </span>
+
+          
+        </div>
+      
+
+      
+      
+      <pre class="hljs-pre"><code class="lang-scss">@function _pixu-escape-quotes() { 
+  $return: $string;
+  $old: &#39;&quot;&#39;;
+  $new: &#39;\\&quot;&#39;;
+  $i: str-index($string, $old);
+  $n: str-length($old);
+
+  @if ($string == $old) {
+    $return: $new;
+  } @else if $i {
+    $a: if($i &gt; 1, str-slice($string, 1, $i - 1), &#39;&#39;);
+    $z: str-slice($string, $i + $n);
+    $z: _pixu-escape-quotes($z);
+
+    $return: $a + if($new, $new, &#39;&#39;) + $z;
+  }
+
+  @return $return;
+ };</code></pre>
+    </div>
+  
+
+    
+  </div>
+
     
   
   
@@ -2262,34 +2558,51 @@ adding proof-quotes for length<span class="widont">&nbsp;</span>values.</p>
     
 
     
-      
+      <table class="param-list" style="width: 100%; border-collapse: collapse;">
+        <thead>
+          <tr class="param-row" style="text-align: left; border-bottom: 1px solid lightgray; color: lightgray; font-size: 14px; line-height: 30px;">
+            <th class="param-name" style="text-align: left; width: 250px;">Type/Name</th>
+            <th class="param-value" style="text-align: left; width: 350px;">Value/Default Value</th>
+            <th class="param-value-type" style="text-align: left; width: 200px;">Type</th>
+            <th class="param-description" style="text-align: left;">Note/Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+            
+  
+  
+
+  
+  <tr class="param-row" style="border-bottom: 1px solid lightgray; font-size: 16px; line-height: 25px;">
+    <td class="param-name" style="text-align: left; width: 250px;">
+      <div style="display: inline-block; padding: 10px 0;">&nbsp;$string</div>
+    </td>
+    <td class="param-value" style="text-align: left; width: 350px;">
+      <div style="display: inline-block; padding: 10px 0;">
         
-  
-  
-
-  
-  <div class="param-list">
-    <h4 class="param-title">
-      
-      
-        <span class="item-name">$string:</span>
-      
-      
-      <span class="value-type">(string)</span>
-      
-    </h4>
-
-    
-      
-      <div class="param-details text-block">
-        <p>The string to be<span class="widont">&nbsp;</span>manipulated</p>
-
+        <span style="color: #aa0e5c;"></span>
       </div>
-    
-  </div>
+    </td>
+    <td class="param-value-type" style="text-align: left; width: 200px; color: #aa0e5c;">
+      <div style="display: inline-block; padding: 10px 0;">(string)</div>
+    </td>
+    <td class="param-description" style="text-align: left;">
+      <div style="display: inline-block; padding: 10px 0;">
+        
+        
+          
+            <p>The string to be<span class="widont">&nbsp;</span>manipulated</p>
+
+        
+      </div>
+    </td>
+  </tr>
 
 
-      
+          
+        </tbody>
+      </table>
 
       
   
@@ -2428,6 +2741,48 @@ adding proof-quotes for length<span class="widont">&nbsp;</span>values.</p>
 
 
     
+  <div class="code-block-wrapper">
+    
+      
+  
+    <div class="code-block">
+      
+        <div class="code-header">
+          <span class="code-language">
+            scss
+          </span>
+
+          
+        </div>
+      
+
+      
+      
+      <pre class="hljs-pre"><code class="lang-scss">@function _pixu-escape-backslashes() { 
+  $return: $string;
+  $old: &#39;\\&#39;;
+  $new: &#39;\\\\&#39;;
+  $i: str-index($string, $old);
+  $n: str-length($old);
+
+  @if ($string == $old) {
+    $return: $new;
+  } @else if $i {
+    $a: if($i &gt; 1, str-slice($string, 1, $i - 1), &#39;&#39;);
+    $z: str-slice($string, $i + $n);
+    $z: _pixu-escape-backslashes($z);
+
+    $return: $a + if($new, $new, &#39;&#39;) + $z;
+  }
+
+  @return $return;
+ };</code></pre>
+    </div>
+  
+
+    
+  </div>
+
     
   
   
@@ -2472,34 +2827,51 @@ adding proof-quotes for length<span class="widont">&nbsp;</span>values.</p>
     
 
     
-      
+      <table class="param-list" style="width: 100%; border-collapse: collapse;">
+        <thead>
+          <tr class="param-row" style="text-align: left; border-bottom: 1px solid lightgray; color: lightgray; font-size: 14px; line-height: 30px;">
+            <th class="param-name" style="text-align: left; width: 250px;">Type/Name</th>
+            <th class="param-value" style="text-align: left; width: 350px;">Value/Default Value</th>
+            <th class="param-value-type" style="text-align: left; width: 200px;">Type</th>
+            <th class="param-description" style="text-align: left;">Note/Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+            
+  
+  
+
+  
+  <tr class="param-row" style="border-bottom: 1px solid lightgray; font-size: 16px; line-height: 25px;">
+    <td class="param-name" style="text-align: left; width: 250px;">
+      <div style="display: inline-block; padding: 10px 0;">&nbsp;$string</div>
+    </td>
+    <td class="param-value" style="text-align: left; width: 350px;">
+      <div style="display: inline-block; padding: 10px 0;">
         
-  
-  
-
-  
-  <div class="param-list">
-    <h4 class="param-title">
-      
-      
-        <span class="item-name">$string:</span>
-      
-      
-      <span class="value-type">(string)</span>
-      
-    </h4>
-
-    
-      
-      <div class="param-details text-block">
-        <p>The string to be<span class="widont">&nbsp;</span>manipulated</p>
-
+        <span style="color: #aa0e5c;"></span>
       </div>
-    
-  </div>
+    </td>
+    <td class="param-value-type" style="text-align: left; width: 200px; color: #aa0e5c;">
+      <div style="display: inline-block; padding: 10px 0;">(string)</div>
+    </td>
+    <td class="param-description" style="text-align: left;">
+      <div style="display: inline-block; padding: 10px 0;">
+        
+        
+          
+            <p>The string to be<span class="widont">&nbsp;</span>manipulated</p>
+
+        
+      </div>
+    </td>
+  </tr>
 
 
-      
+          
+        </tbody>
+      </table>
 
       
   
