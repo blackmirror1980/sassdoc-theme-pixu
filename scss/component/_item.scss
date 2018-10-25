@@ -70,7 +70,6 @@
 }
 
 .param-list {
-  border-collapse: collapse;
   margin-bottom: size('shim');
   width: 100%;
 }
@@ -117,6 +116,89 @@
 
   @include above('item-break') {
     margin-left: size('gutter');
+  }
+}
+
+.param-list-table {
+  border-collapse: collapse;
+  margin-bottom: size('shim');
+  width: 100%;
+
+  thead {
+    .param-row {
+      border-bottom: 1px solid lightgray;
+      color: lightgray;
+      font-size: 14px;
+      line-height: 30px;
+      text-align: left;
+    }
+
+    .param-name {
+      text-align: left;
+      width: 250px;
+    }
+
+    .param-value {
+      text-align: left;
+      width: 350px;
+    }
+
+    .param-value-type {
+      text-align: left;
+      width: 200px;
+    }
+
+    .param-description {
+      text-align: left;
+    }
+  }
+
+  tbody {
+    .param-row {
+      border-bottom: 1px solid lightgray;
+      font-size: 16px;
+      line-height: 25px;
+    }
+
+    .param-name {
+      text-align: left;
+      width: 250px;
+    }
+
+    .param-value {
+      text-align: left;
+      width: 350px;
+    }
+
+    .param-value-type {
+      color: #aa0e5c;
+      text-align: left;
+      width: 200px;
+    }
+
+    .param-description {
+      text-align: left;
+    }
+
+    .param-item {
+      display: inline-block;
+      padding: 10px 0;
+
+      .color-container {
+        border: 1px solid rgb(50, 50, 50);
+        border-radius: 5px;
+        display: inline-block;
+        height: 20px;
+        line-height: 20px;
+        padding: 0 5px;
+        vertical-align: middle;
+        width: 100px;
+      }
+
+      .value {
+        color: #aa0e5c;
+      }
+    }
   }
 }
 

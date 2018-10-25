@@ -51,25 +51,25 @@
 
 {# Parameter list template #}
 {% macro param_list_table(name=none, url=none, item_type=none, value=none, value_type=none, note=none, description=none) %}
-  <tr class="param-row" style="border-bottom: 1px solid lightgray; font-size: 16px; line-height: 25px;">
-    <td class="param-name" style="text-align: left; width: 250px;">
-      <div style="display: inline-block; padding: 10px 0;">{{ item_type }}&nbsp;{{ name }}</div>
+  <tr class="param-row">
+    <td class="param-name">
+      <div class="param-item">{{ item_type }}&nbsp;{{ name }}</div>
     </td>
-    <td class="param-value" style="text-align: left; width: 350px;">
-      <div style="display: inline-block; padding: 10px 0;">
+    <td class="param-value">
+      <div class="param-item">
         {% if value_type == 'color' -%}
-          <span class="color-container" style="border: 1px solid rgb(50, 50, 50); border-radius: 5px; background-color: {{value}}; padding: 0 5px; line-height: 20px; height: 20px; width: 100px; display: inline-block; vertical-align: middle;"></span>
+          <span class="color-container" style="background-color: {{value}};"></span>
         {% elif value_type == 'color-gradient' %}
-          <span class="color-container" style="border: 1px solid rgb(50, 50, 50); border-radius: 5px; background-image: linear-gradient({{value}}); padding: 0 5px; line-height: 20px; height: 20px; width: 100px; display: inline-block; vertical-align: middle;"></span>
+          <span class="color-container" style="background-image: linear-gradient({{value}});"></span>
         {%- endif %}
-        <span style="color: #aa0e5c;">{{ value | safe }}</span>
+        <span class="value">{{ value | safe }}</span>
       </div>
     </td>
-    <td class="param-value-type" style="text-align: left; width: 200px; color: #aa0e5c;">
-      <div style="display: inline-block; padding: 10px 0;">({{ value_type }})</div>
+    <td class="param-value-type">
+      <div class="param-item">({{ value_type }})</div>
     </td>
-    <td class="param-description" style="text-align: left;">
-      <div style="display: inline-block; padding: 10px 0;">
+    <td class="param-description">
+      <div class="param-item">
         {% if note %}
           [{{ note }}]
           <br>
@@ -107,13 +107,13 @@
 
   {% if data or content_data or output_data or return_data or (throw_data.length) %}
     {% call show.item_section(type, header) %}
-      <table class="param-list" style="width: 100%; border-collapse: collapse;">
+      <table class="param-list-table">
         <thead>
-          <tr class="param-row" style="text-align: left; border-bottom: 1px solid lightgray; color: lightgray; font-size: 14px; line-height: 30px;">
-            <th class="param-name" style="text-align: left; width: 250px;">Type/Name</th>
-            <th class="param-value" style="text-align: left; width: 350px;">Value/Default Value</th>
-            <th class="param-value-type" style="text-align: left; width: 200px;">Type</th>
-            <th class="param-description" style="text-align: left;">Note/Description</th>
+          <tr class="param-row">
+            <th class="param-name">Type/Name</th>
+            <th class="param-value">Value/Default Value</th>
+            <th class="param-value-type">Type</th>
+            <th class="param-description">Note/Description</th>
           </tr>
         </thead>
         <tbody>
