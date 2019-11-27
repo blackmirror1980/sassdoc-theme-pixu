@@ -134,6 +134,41 @@
       font-style: normal;
     }
   }
+
+  .summary-subsection {
+    .author {
+      h3 {
+        color: #c6c7c8;
+        display: inline-block;
+        font-size: calc(0.4rem + 0.5vw);
+        font-weight: 400;
+        margin: 0;
+      }
+
+      ol,
+      ul {
+        display: inline-block;
+        list-style: none;
+        margin: 0;
+
+        li {
+          display: inline-block;
+
+          > p {
+            color: #c6c7c8;
+            margin: 0;
+          }
+
+          + li {
+            &:before {
+              content: ', ';
+              display: inline-block;
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 // Invert Colors
