@@ -10,7 +10,7 @@ const sinon = require('sinon');
 /* eslint-disable global-require */
 const annotations = {
   icons: require('../../lib/annotations/icons'),
-  colors: require('../../lib/annotations/colors'),
+  // colors: require('../../lib/annotations/colors'),
   sizes: require('../../lib/annotations/sizes'),
   ratios: require('../../lib/annotations/ratios'),
   font: require('../../lib/annotations/font'),
@@ -87,19 +87,19 @@ describe('icons annotation', function() {
   });
 });
 
-describe('colors annotation', function() {
-  before(function() {
-    this.colors = annotations.colors();
-  });
+// describe('colors annotation', function() {
+//   before(function() {
+//     this.colors = annotations.colors();
+//   });
 
-  describe('parse', function() {
-    it('parses string and returns object', function() {
-      assert.deepEqual(this.colors.parse('foo-bar'), {
-        key: 'foo-bar',
-      });
-    });
-  });
-});
+//   describe('parse', function() {
+//     it('parses string and returns object', function() {
+//       assert.deepEqual(this.colors.parse('foo-bar'), {
+//         key: 'foo-bar',
+//       });
+//     });
+//   });
+// });
 
 describe('sizes annotation', function() {
   before(function() {
@@ -883,9 +883,9 @@ describe('example annotation', function() {
       example
         .resolve(data)
         .then(() => {
-          const errMsg =
-            'Invalid CSS after "...t some bad sass": expected "{", was ""';
-          const sassData = data[0].example[0].code;
+          // const errMsg =
+          //   'Invalid CSS after "...t some bad sass": expected "{", was ""';
+          // const sassData = data[0].example[0].code;
           sinon.assert.calledOnce(this.env.logger.warn);
           // sinon.assert.calledWith(
           //   this.env.logger.warn,
